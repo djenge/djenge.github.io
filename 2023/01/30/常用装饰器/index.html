@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>常用装饰器 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="常用装饰器functools.lru_cache()ex.1生成n个斐波那契数，这种慢递归函数适合使用lru_cache 123456789101112131415import timedef fibonacci(n):    &quot;&quot;&quot;斐波那契函数&quot;&quot;&quot;    if n &lt; 2:        return n    return f">
+<meta property="og:type" content="article">
+<meta property="og:title" content="常用装饰器">
+<meta property="og:url" content="http://example.com/2023/01/30/%E5%B8%B8%E7%94%A8%E8%A3%85%E9%A5%B0%E5%99%A8/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="常用装饰器functools.lru_cache()ex.1生成n个斐波那契数，这种慢递归函数适合使用lru_cache 123456789101112131415import timedef fibonacci(n):    &quot;&quot;&quot;斐波那契函数&quot;&quot;&quot;    if n &lt; 2:        return n    return f">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-01-30T05:37:03.000Z">
+<meta property="article:modified_time" content="2023-01-30T05:38:24.660Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="技术和学习博客">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-常用装饰器" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/01/30/%E5%B8%B8%E7%94%A8%E8%A3%85%E9%A5%B0%E5%99%A8/" class="article-date">
+  <time class="dt-published" datetime="2023-01-30T05:37:03.000Z" itemprop="datePublished">2023-01-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/PythonNotes/">PythonNotes</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      常用装饰器
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="常用装饰器"><a href="#常用装饰器" class="headerlink" title="常用装饰器"></a>常用装饰器</h1><h2 id="functools-lru-cache"><a href="#functools-lru-cache" class="headerlink" title="functools.lru_cache()"></a><code>functools.lru_cache()</code></h2><p><code>ex.1</code>生成<code>n</code>个斐波那契数，这种慢递归函数适合使用<code>lru_cache</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fibonacci</span>(<span class="params">n</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;斐波那契函数&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">if</span> n &lt; <span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> n</span><br><span class="line">    <span class="keyword">return</span> fibonacci(n - <span class="number">2</span>) + fibonacci(n - <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    stime = time.time()</span><br><span class="line">    <span class="built_in">print</span>(fibonacci(<span class="number">34</span>))  <span class="comment"># 没有使用缓存，则需要几秒钟的时间</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;total time is %.3fs&quot;</span> % (time.time()-stime))</span><br><span class="line">    </span><br><span class="line"><span class="number">5702887</span></span><br><span class="line">total time <span class="keyword">is</span> <span class="number">2.101</span></span><br></pre></td></tr></table></figure>
+
+<p>如果使用了<code>lru_cache</code>, 计算用时被大大减少，测试计算时间为<code>0</code>s，这是因为我们在使用<code>fibonacci</code>递归函数的时候，会重复计算值。使用了<code>lru_cache</code>后，所有的重复计算只会执行一次。</p>
+<h3 id="缓存按照参数作为键"><a href="#缓存按照参数作为键" class="headerlink" title="缓存按照参数作为键"></a>缓存按照参数作为键</h3><p>缓存按照所有参数作为键</p>
+<p><code>ex2</code>缓存演示</p>
+<p>函数使用了<code>lru_cache</code>缓存，所以只打印一次执行计算。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>@functools.lru_cache(maxsize=<span class="number">100</span>)</span><br><span class="line"><span class="meta">... </span><span class="keyword">def</span> <span class="title function_">my_sum</span>(<span class="params">a,b</span>):</span><br><span class="line"><span class="meta">... </span>    <span class="built_in">print</span>(<span class="string">&#x27;执行计算&#x27;</span>)</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">return</span> a + b</span><br><span class="line">...</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line"><span class="meta">... </span>    t1 = my_sum(<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line"><span class="meta">... </span>    <span class="built_in">print</span>(t1)</span><br><span class="line"><span class="meta">... </span>    t2 = my_sum(<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line"><span class="meta">... </span>    <span class="built_in">print</span>(t2)</span><br><span class="line">...</span><br><span class="line">执行计算</span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="number">3</span></span><br></pre></td></tr></table></figure>
+
+<p><code>ex3</code>参数改变，重新缓存</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line"><span class="meta">... </span>    t1 = my_sum(<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line"><span class="meta">... </span>    <span class="built_in">print</span>(t1)</span><br><span class="line"><span class="meta">... </span>    t2 = my_sum(<span class="number">2</span>,<span class="number">1</span>)</span><br><span class="line"><span class="meta">... </span>    <span class="built_in">print</span>(t2)</span><br><span class="line">...</span><br><span class="line">执行计算</span><br><span class="line"><span class="number">3</span></span><br><span class="line">执行计算</span><br><span class="line"><span class="number">3</span></span><br></pre></td></tr></table></figure>
+
+<p>像这样，第一个参数改变了，所以需要重新缓存。</p>
+<h3 id="所有参数必须可hash"><a href="#所有参数必须可hash" class="headerlink" title="所有参数必须可hash"></a>所有参数必须可<code>hash</code></h3><p>缓存实际上存储在字典中，所以所有的参数必须可<code>hash</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> functools <span class="keyword">import</span> lru_cache</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>@lru_cache(maxsize=<span class="number">100</span>)</span><br><span class="line"><span class="meta">... </span><span class="keyword">def</span> <span class="title function_">list_sum</span>(<span class="params">nums:<span class="built_in">list</span></span>):</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">return</span> <span class="built_in">sum</span>(nums)</span><br><span class="line">...</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>nums = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>list_sum(nums)</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">&quot;&lt;stdin&gt;&quot;</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">TypeError: unhashable <span class="built_in">type</span>: <span class="string">&#x27;list&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="cache"><a href="#cache" class="headerlink" title="cache()"></a>cache()</h2><p><code>cache()</code>装饰器与<code>lru_cache()</code>装饰器的区别是，前者会把每一个计算结果都进行缓存，没有最大容量的限制不进行淘汰。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/01/30/%E5%B8%B8%E7%94%A8%E8%A3%85%E9%A5%B0%E5%99%A8/" data-id="cldidxnjt000120vecyxwgqqo" data-title="常用装饰器" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF%E5%92%8C%E5%AD%A6%E4%B9%A0%E5%8D%9A%E5%AE%A2/" rel="tag">技术和学习博客</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2023/01/30/%E6%A8%A1%E5%9D%97/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">模块</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/PythonNotes/">PythonNotes</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF%E5%92%8C%E5%AD%A6%E4%B9%A0%E5%8D%9A%E5%AE%A2/" rel="tag">技术和学习博客</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/%E6%8A%80%E6%9C%AF%E5%92%8C%E5%AD%A6%E4%B9%A0%E5%8D%9A%E5%AE%A2/" style="font-size: 10px;">技术和学习博客</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/01/30/%E5%B8%B8%E7%94%A8%E8%A3%85%E9%A5%B0%E5%99%A8/">常用装饰器</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/30/%E6%A8%A1%E5%9D%97/">模块</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/30/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

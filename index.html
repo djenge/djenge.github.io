@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-常用装饰器" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/01/30/%E5%B8%B8%E7%94%A8%E8%A3%85%E9%A5%B0%E5%99%A8/" class="article-date">
+  <time class="dt-published" datetime="2023-01-30T05:37:03.000Z" itemprop="datePublished">2023-01-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/PythonNotes/">PythonNotes</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/01/30/%E5%B8%B8%E7%94%A8%E8%A3%85%E9%A5%B0%E5%99%A8/">常用装饰器</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="常用装饰器"><a href="#常用装饰器" class="headerlink" title="常用装饰器"></a>常用装饰器</h1><h2 id="functools-lru-cache"><a href="#functools-lru-cache" class="headerlink" title="functools.lru_cache()"></a><code>functools.lru_cache()</code></h2><p><code>ex.1</code>生成<code>n</code>个斐波那契数，这种慢递归函数适合使用<code>lru_cache</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fibonacci</span>(<span class="params">n</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;斐波那契函数&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">if</span> n &lt; <span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> n</span><br><span class="line">    <span class="keyword">return</span> fibonacci(n - <span class="number">2</span>) + fibonacci(n - <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    stime = time.time()</span><br><span class="line">    <span class="built_in">print</span>(fibonacci(<span class="number">34</span>))  <span class="comment"># 没有使用缓存，则需要几秒钟的时间</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;total time is %.3fs&quot;</span> % (time.time()-stime))</span><br><span class="line">    </span><br><span class="line"><span class="number">5702887</span></span><br><span class="line">total time <span class="keyword">is</span> <span class="number">2.101</span></span><br></pre></td></tr></table></figure>
+
+<p>如果使用了<code>lru_cache</code>, 计算用时被大大减少，测试计算时间为<code>0</code>s，这是因为我们在使用<code>fibonacci</code>递归函数的时候，会重复计算值。使用了<code>lru_cache</code>后，所有的重复计算只会执行一次。</p>
+<h3 id="缓存按照参数作为键"><a href="#缓存按照参数作为键" class="headerlink" title="缓存按照参数作为键"></a>缓存按照参数作为键</h3><p>缓存按照所有参数作为键</p>
+<p><code>ex2</code>缓存演示</p>
+<p>函数使用了<code>lru_cache</code>缓存，所以只打印一次执行计算。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>@functools.lru_cache(maxsize=<span class="number">100</span>)</span><br><span class="line"><span class="meta">... </span><span class="keyword">def</span> <span class="title function_">my_sum</span>(<span class="params">a,b</span>):</span><br><span class="line"><span class="meta">... </span>    <span class="built_in">print</span>(<span class="string">&#x27;执行计算&#x27;</span>)</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">return</span> a + b</span><br><span class="line">...</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line"><span class="meta">... </span>    t1 = my_sum(<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line"><span class="meta">... </span>    <span class="built_in">print</span>(t1)</span><br><span class="line"><span class="meta">... </span>    t2 = my_sum(<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line"><span class="meta">... </span>    <span class="built_in">print</span>(t2)</span><br><span class="line">...</span><br><span class="line">执行计算</span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="number">3</span></span><br></pre></td></tr></table></figure>
+
+<p><code>ex3</code>参数改变，重新缓存</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line"><span class="meta">... </span>    t1 = my_sum(<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line"><span class="meta">... </span>    <span class="built_in">print</span>(t1)</span><br><span class="line"><span class="meta">... </span>    t2 = my_sum(<span class="number">2</span>,<span class="number">1</span>)</span><br><span class="line"><span class="meta">... </span>    <span class="built_in">print</span>(t2)</span><br><span class="line">...</span><br><span class="line">执行计算</span><br><span class="line"><span class="number">3</span></span><br><span class="line">执行计算</span><br><span class="line"><span class="number">3</span></span><br></pre></td></tr></table></figure>
+
+<p>像这样，第一个参数改变了，所以需要重新缓存。</p>
+<h3 id="所有参数必须可hash"><a href="#所有参数必须可hash" class="headerlink" title="所有参数必须可hash"></a>所有参数必须可<code>hash</code></h3><p>缓存实际上存储在字典中，所以所有的参数必须可<code>hash</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> functools <span class="keyword">import</span> lru_cache</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>@lru_cache(maxsize=<span class="number">100</span>)</span><br><span class="line"><span class="meta">... </span><span class="keyword">def</span> <span class="title function_">list_sum</span>(<span class="params">nums:<span class="built_in">list</span></span>):</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">return</span> <span class="built_in">sum</span>(nums)</span><br><span class="line">...</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>nums = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>list_sum(nums)</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">&quot;&lt;stdin&gt;&quot;</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">TypeError: unhashable <span class="built_in">type</span>: <span class="string">&#x27;list&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="cache"><a href="#cache" class="headerlink" title="cache()"></a>cache()</h2><p><code>cache()</code>装饰器与<code>lru_cache()</code>装饰器的区别是，前者会把每一个计算结果都进行缓存，没有最大容量的限制不进行淘汰。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/01/30/%E5%B8%B8%E7%94%A8%E8%A3%85%E9%A5%B0%E5%99%A8/" data-id="cldidxnjt000120vecyxwgqqo" data-title="常用装饰器" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF%E5%92%8C%E5%AD%A6%E4%B9%A0%E5%8D%9A%E5%AE%A2/" rel="tag">技术和学习博客</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-模块" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/01/30/%E6%A8%A1%E5%9D%97/" class="article-date">
+  <time class="dt-published" datetime="2023-01-30T04:24:26.000Z" itemprop="datePublished">2023-01-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/PythonNotes/">PythonNotes</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/01/30/%E6%A8%A1%E5%9D%97/">模块</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="模块-包"><a href="#模块-包" class="headerlink" title="模块, 包"></a>模块, 包</h1><p>一个模块就是一个文件。</p>
+<h2 id="import语句"><a href="#import语句" class="headerlink" title="import语句"></a><code>import</code>语句</h2><p>当解释器遇到<code>import</code>语句，如果模块在当前的搜索路径就会被导入。搜索路径是一个列表。如果解释器会先进行搜索所有目录的列表。</p>
+<p>一个模块只会被导入一次，不管执行了多少次<code>import</code>。这样可以防止导入模块被一遍又一遍地执行。</p>
+<p>搜索路径是由一系列目录名组成的。<code>python</code>解释器依次从这些目录中去寻找所引入的模块。搜索路径很像环境变量，实际上也可以通过被定义环境变量的方式来确定搜索路径。搜索路径是在<code>Python</code>编译或者安装的时候确定的，安装新的库也会对其进行相应的修改。搜索路径存储在<code>sys</code>模块中的<code>path</code>变量。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> sys</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>sys.path</span><br><span class="line">[<span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;C:\\Python310\\python310.zip&#x27;</span>, <span class="string">&#x27;C:\\Python310\\DLLs&#x27;</span>, <span class="string">&#x27;C:\\Python310\\lib&#x27;</span>, <span class="string">&#x27;C:\\Python310&#x27;</span>, <span class="string">&#x27;C:\\Python310\\lib\\site-packages&#x27;</span>]</span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure>
+
+<p>第一项是一个空串，代表当前目录。</p>
+<p>如果在当前目录下存在与要引入模块同名的文件，就会把要引入的模块屏蔽掉。</p>
+<p>可以在脚本中修改<code>sys.path</code>来引入一些不在搜索路径中的模块。</p>
+<p>在当前目录下写一个<code>fibo.py</code>文件</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 斐波那契(fibonacci)数列模块</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fib</span>(<span class="params">n</span>):    <span class="comment"># 定义到 n 的斐波那契数列</span></span><br><span class="line">    a, b = <span class="number">0</span>, <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> b &lt; n:</span><br><span class="line">        <span class="built_in">print</span>(b, end=<span class="string">&#x27; &#x27;</span>)</span><br><span class="line">        a, b = b, a+b</span><br><span class="line">    <span class="built_in">print</span>()</span><br><span class="line"> </span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fib2</span>(<span class="params">n</span>): <span class="comment"># 返回到 n 的斐波那契数列</span></span><br><span class="line">    result = []</span><br><span class="line">    a, b = <span class="number">0</span>, <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> b &lt; n:</span><br><span class="line">        result.append(b)</span><br><span class="line">        a, b = b, a+b</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>然后在当前目录下打开<code>python</code>解释器。并输入以下命令</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> fibo</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">globals</span>()</span><br><span class="line">&#123;<span class="string">&#x27;__name__&#x27;</span>: <span class="string">&#x27;__main__&#x27;</span>, <span class="string">&#x27;__doc__&#x27;</span>: <span class="literal">None</span>, <span class="string">&#x27;__package__&#x27;</span>: <span class="literal">None</span>, <span class="string">&#x27;__loader__&#x27;</span>: &lt;<span class="keyword">class</span> <span class="string">&#x27;_frozen_importlib.BuiltinImporter&#x27;</span>&gt;, <span class="string">&#x27;__spec__&#x27;</span>: <span class="literal">None</span>, <span class="string">&#x27;__annotations__&#x27;</span>: &#123;&#125;, <span class="string">&#x27;__builtins__&#x27;</span>: &lt;module <span class="string">&#x27;builtins&#x27;</span> (built-<span class="keyword">in</span>)&gt;, <span class="string">&#x27;fibo&#x27;</span>: &lt;module <span class="string">&#x27;fibo&#x27;</span> <span class="keyword">from</span> <span class="string">&#x27;E:\\AI\\CainiaoDemo\\fibo.py&#x27;</span>&gt;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>可以看到，这样做没有把直接定义在<code>fibo</code>模块中的函数名称写入当前符号表里，只是把模块<code>fibo</code>的名字写进去了。</p>
+<p>可以使用模块名称来访问函数:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>fibo.fib(<span class="number">1000</span>)</span><br><span class="line"><span class="number">1</span> <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">5</span> <span class="number">8</span> <span class="number">13</span> <span class="number">21</span> <span class="number">34</span> <span class="number">55</span> <span class="number">89</span> <span class="number">144</span> <span class="number">233</span> <span class="number">377</span> <span class="number">610</span> <span class="number">987</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fibo.fib2(<span class="number">100</span>)</span><br><span class="line">[<span class="number">1</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">13</span>, <span class="number">21</span>, <span class="number">34</span>, <span class="number">55</span>, <span class="number">89</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fibo.__name__</span><br><span class="line"><span class="string">&#x27;fibo&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">globals</span>()</span><br><span class="line">&#123;<span class="string">&#x27;__name__&#x27;</span>: <span class="string">&#x27;__main__&#x27;</span>, <span class="string">&#x27;__doc__&#x27;</span>: <span class="literal">None</span>, <span class="string">&#x27;__package__&#x27;</span>: <span class="literal">None</span>, <span class="string">&#x27;__loader__&#x27;</span>: &lt;<span class="keyword">class</span> <span class="string">&#x27;_frozen_importlib.BuiltinImporter&#x27;</span>&gt;, <span class="string">&#x27;__spec__&#x27;</span>: <span class="literal">None</span>, <span class="string">&#x27;__annotations__&#x27;</span>: &#123;&#125;, <span class="string">&#x27;__builtins__&#x27;</span>: &lt;module <span class="string">&#x27;builtins&#x27;</span> (built-<span class="keyword">in</span>)&gt;, <span class="string">&#x27;fibo&#x27;</span>: &lt;module <span class="string">&#x27;fibo&#x27;</span> <span class="keyword">from</span> <span class="string">&#x27;E:\\AI\\CainiaoDemo\\fibo.py&#x27;</span>&gt;&#125;&gt;&gt;&gt;</span><br></pre></td></tr></table></figure>
+
+<p>如果打算经常使用一个函数，可以把它赋给一个本地的名称：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>fib=fibo.fib</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fib(<span class="number">500</span>)</span><br><span class="line"><span class="number">1</span> <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">5</span> <span class="number">8</span> <span class="number">13</span> <span class="number">21</span> <span class="number">34</span> <span class="number">55</span> <span class="number">89</span> <span class="number">144</span> <span class="number">233</span> <span class="number">377</span> </span><br></pre></td></tr></table></figure>
+
+<h2 id="from-import语句"><a href="#from-import语句" class="headerlink" title="from...import语句"></a><code>from...import</code>语句</h2><p><code>python</code>的<code>from</code>语句可以让我们从模块中导入一个指定的部分到当前命名空间中。例如, 要导入<code>fibo</code>模块的<code>fib</code>函数，可以使用如下语句:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> fibo <span class="keyword">import</span> fib,fib2</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fib(<span class="number">500</span>)</span><br><span class="line"><span class="number">1</span> <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">5</span> <span class="number">8</span> <span class="number">13</span> <span class="number">21</span> <span class="number">34</span> <span class="number">55</span> <span class="number">89</span> <span class="number">144</span> <span class="number">233</span> <span class="number">377</span> </span><br></pre></td></tr></table></figure>
+
+<p>这个声明不会把整个<code>fibo</code>模块导入到当前命名空间中，只会将<code>fibo</code>里的<code>fib</code>和<code>fib2</code>函数引入进来。</p>
+<h2 id="from-import-语句"><a href="#from-import-语句" class="headerlink" title="from ... import *语句"></a><code>from ... import *</code>语句</h2><p>把一个模块的所有内容导入当前命名空间中，只需使用如下声明</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> modname <span class="keyword">import</span> *</span><br></pre></td></tr></table></figure>
+
+<p>者提供了一个简单的方法来导入一个模块中的所有项目。但是这种声明不应该被过多使用。</p>
+<h2 id="深入模块"><a href="#深入模块" class="headerlink" title="深入模块"></a>深入模块</h2><p>模块除了方法定义，还可以包括可执行代码。这些代码一般用来初始化这个模块。这些代码只有在第一次被导入时才会执行。</p>
+<p>每个模块有各自独立的符号表，在模块内部为所有的函数当作全局符号表来使用。</p>
+<p>所以，模块的作者可以大胆使用模块内部的全局变量。</p>
+<p>模块是可以导入其他模块的。被导入的模块名称将被放入当前操作的模块的符号表中。</p>
+<p>还有一种方法，可以使用<code>import</code></p>
+<p>直接把模块内函数&#x2F;变量的名称导入当前操作模块。比如:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> fibo <span class="keyword">import</span> fib, fib2</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fib(<span class="number">500</span>)</span><br><span class="line"><span class="number">1</span> <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">5</span> <span class="number">8</span> <span class="number">13</span> <span class="number">21</span> <span class="number">34</span> <span class="number">55</span> <span class="number">89</span> <span class="number">144</span> <span class="number">233</span> <span class="number">377</span></span><br></pre></td></tr></table></figure>
+
+<p>这种导入方法不会把被导入的模块的名称放在当前的字符表中，所以在这个例子中，<code>fibo</code>的名称是没有意义的。</p>
+<p>还有一种方法，可以一次性把模块中的所有函数&#x2F;变量名称都导入当前模块的字符表</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> fibo <span class="keyword">import</span> *</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fib(<span class="number">500</span>)</span><br><span class="line"><span class="number">1</span> <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">5</span> <span class="number">8</span> <span class="number">13</span> <span class="number">21</span> <span class="number">34</span> <span class="number">55</span> <span class="number">89</span> <span class="number">144</span> <span class="number">233</span> <span class="number">377</span></span><br></pre></td></tr></table></figure>
+
+<p>这种方法会把所有的名字都导入进来，但由单一下划线(_)开头的名字不在此中。大多数情况， Python程序员不使用这种方法，因为引入的其它来源的命名，很可能覆盖了已有的定义。</p>
+<h2 id="name-属性"><a href="#name-属性" class="headerlink" title="__name__属性"></a><code>__name__</code>属性</h2><p>每个模块都有一个<code>__name__</code>属性。当其值是<code>__main__</code>时，表明该模块自身在运行，否则是被引入。</p>
+<p>一个模块被另一个程序第一次引入时，其主程序将运行。如果我们想在模块被引入时，模块中的某一程序块不执行，我们可以用<code>__name__</code>属性来使该程序块仅在该模块自身运行时执行。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># using_name.py</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;程序自身在运行&#x27;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;我来自另一模块&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>运行输出:</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">PS</span> E:\AI\CainiaoDemo&gt; python using_name.py</span><br><span class="line">程序自身在运行</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> using_name</span><br><span class="line">我来自另一模块</span><br></pre></td></tr></table></figure>
+
+<h2 id="dir-函数"><a href="#dir-函数" class="headerlink" title="dir()函数"></a><code>dir()</code>函数</h2><p>内置的函数<code>dir()</code>可以找到模块内定义的所有名称。以一个<code>字符串列表</code>的形式返回</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> fibo,sys</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">dir</span>(fibo)</span><br><span class="line">[<span class="string">&#x27;__builtins__&#x27;</span>, <span class="string">&#x27;__cached__&#x27;</span>, <span class="string">&#x27;__doc__&#x27;</span>, <span class="string">&#x27;__file__&#x27;</span>, <span class="string">&#x27;__loader__&#x27;</span>, <span class="string">&#x27;__name__&#x27;</span>, <span class="string">&#x27;__package__&#x27;</span>, <span class="string">&#x27;__spec__&#x27;</span>, <span class="string">&#x27;fib&#x27;</span>, <span class="string">&#x27;fib2&#x27;</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">dir</span>(sys)</span><br><span class="line">[<span class="string">&#x27;__breakpointhook__&#x27;</span>, <span class="string">&#x27;__displayhook__&#x27;</span>, <span class="string">&#x27;__doc__&#x27;</span>, <span class="string">&#x27;__excepthook__&#x27;</span>, <span class="string">&#x27;__interactivehook__&#x27;</span>, <span class="string">&#x27;__loader__&#x27;</span>, <span class="string">&#x27;__name__&#x27;</span>, <span class="string">&#x27;__package__&#x27;</span>, <span class="string">&#x27;__spec__&#x27;</span>, <span class="string">&#x27;__stderr__&#x27;</span>, <span class="string">&#x27;__stdin__&#x27;</span>, <span class="string">&#x27;__stdout__&#x27;</span>, <span class="string">&#x27;__unraisablehook__&#x27;</span>, <span class="string">&#x27;_base_executable&#x27;</span>, <span class="string">&#x27;_clear_type_cache&#x27;</span>, <span class="string">&#x27;_current_exceptions&#x27;</span>, <span class="string">&#x27;_current_frames&#x27;</span>, <span class="string">&#x27;_deactivate_opcache&#x27;</span>, <span class="string">&#x27;_debugmallocstats&#x27;</span>, <span class="string">&#x27;_enablelegacywindowsfsencoding&#x27;</span>, <span class="string">&#x27;_framework&#x27;</span>, <span class="string">&#x27;_getframe&#x27;</span>, <span class="string">&#x27;_git&#x27;</span>, <span class="string">&#x27;_home&#x27;</span>, <span class="string">&#x27;_xoptions&#x27;</span>, <span class="string">&#x27;addaudithook&#x27;</span>, <span class="string">&#x27;api_version&#x27;</span>, <span class="string">&#x27;argv&#x27;</span>, <span class="string">&#x27;audit&#x27;</span>, <span class="string">&#x27;base_exec_prefix&#x27;</span>, <span class="string">&#x27;base_prefix&#x27;</span>, <span class="string">&#x27;breakpointhook&#x27;</span>, <span class="string">&#x27;builtin_module_names&#x27;</span>, <span class="string">&#x27;byteorder&#x27;</span>, <span class="string">&#x27;call_tracing&#x27;</span>, <span class="string">&#x27;copyright&#x27;</span>, <span class="string">&#x27;displayhook&#x27;</span>, <span class="string">&#x27;dllhandle&#x27;</span>, <span class="string">&#x27;dont_write_bytecode&#x27;</span>, <span class="string">&#x27;exc_info&#x27;</span>, <span class="string">&#x27;excepthook&#x27;</span>, <span class="string">&#x27;exec_prefix&#x27;</span>, <span class="string">&#x27;executable&#x27;</span>, <span class="string">&#x27;exit&#x27;</span>, <span class="string">&#x27;flags&#x27;</span>, <span class="string">&#x27;float_info&#x27;</span>, <span class="string">&#x27;float_repr_style&#x27;</span>, <span class="string">&#x27;get_asyncgen_hooks&#x27;</span>, <span class="string">&#x27;get_coroutine_origin_tracking_depth&#x27;</span>, <span class="string">&#x27;getallocatedblocks&#x27;</span>, <span class="string">&#x27;getdefaultencoding&#x27;</span>, <span class="string">&#x27;getfilesystemencodeerrors&#x27;</span>, <span class="string">&#x27;getfilesystemencoding&#x27;</span>, <span class="string">&#x27;getprofile&#x27;</span>, <span class="string">&#x27;getrecursionlimit&#x27;</span>, <span class="string">&#x27;getrefcount&#x27;</span>, <span class="string">&#x27;getsizeof&#x27;</span>, <span class="string">&#x27;getswitchinterval&#x27;</span>, <span class="string">&#x27;gettrace&#x27;</span>, <span class="string">&#x27;getwindowsversion&#x27;</span>, <span class="string">&#x27;hash_info&#x27;</span>, <span class="string">&#x27;hexversion&#x27;</span>, <span class="string">&#x27;implementation&#x27;</span>, <span class="string">&#x27;int_info&#x27;</span>, <span class="string">&#x27;intern&#x27;</span>, <span class="string">&#x27;is_finalizing&#x27;</span>, <span class="string">&#x27;maxsize&#x27;</span>, <span class="string">&#x27;maxunicode&#x27;</span>, <span class="string">&#x27;meta_path&#x27;</span>, <span class="string">&#x27;modules&#x27;</span>, <span class="string">&#x27;orig_argv&#x27;</span>, <span class="string">&#x27;path&#x27;</span>, <span class="string">&#x27;path_hooks&#x27;</span>, <span class="string">&#x27;path_importer_cache&#x27;</span>, <span class="string">&#x27;platform&#x27;</span>, <span class="string">&#x27;platlibdir&#x27;</span>, <span class="string">&#x27;prefix&#x27;</span>, <span class="string">&#x27;ps1&#x27;</span>, <span class="string">&#x27;ps2&#x27;</span>, <span class="string">&#x27;pycache_prefix&#x27;</span>, <span class="string">&#x27;set_asyncgen_hooks&#x27;</span>, <span class="string">&#x27;set_coroutine_origin_tracking_depth&#x27;</span>, <span class="string">&#x27;setprofile&#x27;</span>, <span class="string">&#x27;setrecursionlimit&#x27;</span>, <span class="string">&#x27;setswitchinterval&#x27;</span>, <span class="string">&#x27;settrace&#x27;</span>, <span class="string">&#x27;stderr&#x27;</span>, <span class="string">&#x27;stdin&#x27;</span>, <span class="string">&#x27;stdlib_module_names&#x27;</span>, <span class="string">&#x27;stdout&#x27;</span>, <span class="string">&#x27;thread_info&#x27;</span>, <span class="string">&#x27;unraisablehook&#x27;</span>, <span class="string">&#x27;version&#x27;</span>, <span class="string">&#x27;version_info&#x27;</span>, <span class="string">&#x27;warnoptions&#x27;</span>, <span class="string">&#x27;winver&#x27;</span>]</span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure>
+
+<p>如果没有给定参数，那么<code>dir()</code>函数会罗列出当前定义的所有名称</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> fibo </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fib = fibo.fib</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">dir</span>() <span class="comment"># 得到一个当前模块中定义的属性列表</span></span><br><span class="line">[<span class="string">&#x27;__annotations__&#x27;</span>, <span class="string">&#x27;__builtins__&#x27;</span>, <span class="string">&#x27;__doc__&#x27;</span>, <span class="string">&#x27;__loader__&#x27;</span>, <span class="string">&#x27;__name__&#x27;</span>, <span class="string">&#x27;__package__&#x27;</span>, <span class="string">&#x27;__spec__&#x27;</span>, <span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;fib&#x27;</span>, <span class="string">&#x27;fibo&#x27;</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = <span class="number">5</span> <span class="comment"># 建立一个新的变量&#x27;a&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">dir</span>()</span><br><span class="line">[<span class="string">&#x27;__annotations__&#x27;</span>, <span class="string">&#x27;__builtins__&#x27;</span>, <span class="string">&#x27;__doc__&#x27;</span>, <span class="string">&#x27;__loader__&#x27;</span>, <span class="string">&#x27;__name__&#x27;</span>, <span class="string">&#x27;__package__&#x27;</span>, <span class="string">&#x27;__spec__&#x27;</span>, <span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;fib&#x27;</span>, <span class="string">&#x27;fibo&#x27;</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">del</span> a <span class="comment"># 删除变量名a</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">dir</span>()</span><br><span class="line">[<span class="string">&#x27;__annotations__&#x27;</span>, <span class="string">&#x27;__builtins__&#x27;</span>, <span class="string">&#x27;__doc__&#x27;</span>, <span class="string">&#x27;__loader__&#x27;</span>, <span class="string">&#x27;__name__&#x27;</span>, <span class="string">&#x27;__package__&#x27;</span>, <span class="string">&#x27;__spec__&#x27;</span>, <span class="string">&#x27;fib&#x27;</span>, <span class="string">&#x27;fibo&#x27;</span>]</span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="标准模块"><a href="#标准模块" class="headerlink" title="标准模块"></a>标准模块</h2><p><code>python</code>本身带着一些标准的模块库。</p>
+<p>有些模块直接被构建在解析器里，这些虽然不是一些语言内置的功能，但是他却能很高效的使用，甚至是系统级调用也没问题。这些组件会根据不同的操作系统进行不同形式的配置，比如<code> winreg</code> 这个模块就只会提供给 <code>Windows</code> 系统。</p>
+<p>应该注意到这有一个特别的模块<code> sys</code> ，它内置在每一个 <code>Python</code> 解析器中。变量 <code>sys.ps1</code> 和 <code>sys.ps2 </code>定义了主提示符和副提示符所对应的字符串:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> sys</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>sys.ps1</span><br><span class="line"><span class="string">&#x27;&gt;&gt;&gt; &#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>sys.ps2</span><br><span class="line"><span class="string">&#x27;... &#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>sys.ps1 = <span class="string">&#x27;C&gt; &#x27;</span></span><br><span class="line">C&gt; <span class="built_in">print</span>(<span class="string">&#x27;Runoob!&#x27;</span>)</span><br><span class="line">Runoob!</span><br><span class="line">C&gt; </span><br></pre></td></tr></table></figure>
+
+<h2 id="包"><a href="#包" class="headerlink" title="包"></a>包</h2><p>包是一种管理<code>Python</code>模块命名空间的形式。采用”点模块名称”。</p>
+<p>比如一个模块的名称是<code>A.B</code>,那么他表示一个包<code>A</code>中的子模块<code>B</code>。</p>
+<p>就好像使用模块的时候，你不用担心不同模块之间的全局变量相互影响一样，采用点模块名称这种形式也不用担心不同库之间的模块重名的情况。</p>
+<p>这样不同的作者都可以提供 <code>NumPy</code> 模块，或者是 <code>Python</code> 图形库。</p>
+<p>不妨假设你想设计一套统一处理声音文件和数据的模块（或者称之为一个”包”）。</p>
+<p>现存很多种不同的音频文件格式（基本上都是通过后缀名区分的，例如： <code>.wav</code>，<code>:file:.aiff</code>，<code>:file:.au</code>，），所以你需要有一组不断增加的模块，用来在不同的格式之间转换。</p>
+<p>并且针对这些音频数据，还有很多不同的操作（比如混音，添加回声，增加均衡器功能，创建人造立体声效果），所以你还需要一组怎么也写不完的模块来处理这些操作。</p>
+<p>这里给出一种可能的包结构</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">sound/                          顶层包</span><br><span class="line">      __init__.py               初始化 sound 包</span><br><span class="line">      formats/                  文件格式转换子包</span><br><span class="line">              __init__.py</span><br><span class="line">              wavread.py</span><br><span class="line">              wavwrite.py</span><br><span class="line">              aiffread.py</span><br><span class="line">              aiffwrite.py</span><br><span class="line">              auread.py</span><br><span class="line">              auwrite.py</span><br><span class="line">              ...</span><br><span class="line">      effects/                  声音效果子包</span><br><span class="line">              __init__.py</span><br><span class="line">              echo.py</span><br><span class="line">              surround.py</span><br><span class="line">              reverse.py</span><br><span class="line">              ...</span><br><span class="line">      filters/                  filters 子包</span><br><span class="line">              __init__.py</span><br><span class="line">              equalizer.py</span><br><span class="line">              vocoder.py</span><br><span class="line">              karaoke.py</span><br><span class="line">              ...</span><br></pre></td></tr></table></figure>
+
+<p>在导入一个包的时候，<code>Python</code>会根据<code>sys.path</code>中的目录来寻找这个包中包含的子目录。</p>
+<p>目录只有包含一个叫做<code>__init__.py</code>的文件才会被认作是一个包，主要是为了避免一些滥俗的名字(比如叫做<code>string</code>)不小心地影响搜索路径中的有效模块。</p>
+<p>最简单的情况，放一个空的<code>:file:__init__.py</code>就可以了。当然这个文件中也可以包含一些初始化代码或者为<code>__all__</code>变量赋值。</p>
+<p>用户可以每次只导入一个包里的特定模块。它必须使用全名去访问:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sound.effects.echo.echofilter(<span class="built_in">input</span>, output, delay=<span class="number">0.7</span>, atten=<span class="number">4</span>)</span><br></pre></td></tr></table></figure>
+
+<p>还有一种导入子模块地方法是:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">from sound.effects import echo</span><br></pre></td></tr></table></figure>
+
+<p>这样也会导入子模块<code>:echo</code>,并且他不需要那些隆昌的前缀，所以他可以这样使用:</p>
+<p><code>echo.echofilter(input, output, delay=0.7, atten=4)</code></p>
+<p>还有一种变化就是直接导入一个函数或者变量</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sound.effects.echo <span class="keyword">import</span> echofilter</span><br></pre></td></tr></table></figure>
+
+<p>同样的 ，这种方法回到如子模块<code>echo</code>,并且可以直接使用他的<code>echofilter()</code>函数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echofilter(<span class="built_in">input</span>, output, delay=<span class="number">0.7</span>, atten=<span class="number">4</span>)</span><br></pre></td></tr></table></figure>
+
+<p>注意当使用 <code>from package import item</code> 这种形式的时候，对应的 <code>item </code>既可以是包里面的子模块（子包），或者包里面定义的其他名称，比如函数，类或者变量。</p>
+<p><code>import</code> 语法会首先把 <code>item</code> 当作一个包定义的名称，如果没找到，再试图按照一个模块去导入。如果还没找到，抛出一个 <code>:exc:ImportError</code> 异常。</p>
+<p>反之，如果使用形如 <code>import item.subitem.subsubitem</code> 这种导入形式，除了最后一项，都必须是包，而最后一项则可以是模块或者是包，<strong>但是不可以是类，函数或者变量的名字</strong>。</p>
+<h2 id="从一个包中导入"><a href="#从一个包中导入" class="headerlink" title="从一个包中导入*"></a>从一个包中导入<code>*</code></h2><p>如果我们使用 <code>from sound.effects import </code> 会发生什么呢？</p>
+<p><code>Python</code> 会进入文件系统，找到这个包里面所有的子模块，然后一个一个的把它们都导入进来。</p>
+<p>但这个方法在 <code>Windows</code> 平台上工作的就不是非常好，因为 <code>Windows</code> 是一个不区分大小写的系统。</p>
+<p>在<code> Windows</code> 平台上，我们无法确定一个叫做 <code>ECHO.py </code>的文件导入为模块是 <code>echo</code> 还是 <code>Echo</code>，或者是 <code>ECHO</code>。</p>
+<p>为了解决这个问题，我们只需要提供一个精确包的索引。</p>
+<p>导入语句遵循如下规则：如果包定义文件 <code>__init__.py</code> 存在一个叫做 <code>__all__ </code>的<strong>列表变量</strong>，那么在使用<code>from package import</code> 的时候就把这个列表中的所有名字作为包内容导入。</p>
+<p>作为包的作者，可别忘了在更新包之后保证 <code>__all__</code> 也更新了啊。</p>
+<p>以下实例在 <code>file:sounds/effects/__init__.py</code> 中包含如下代码:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">__all__ = [<span class="string">&quot;echo&quot;</span>, <span class="string">&quot;surround&quot;</span>, <span class="string">&quot;reverse&quot;</span>]</span><br></pre></td></tr></table></figure>
+
+<p>这表示当你使用<code>from sound.effects import *</code>这种用法时，你只会导入包里面这三个子模块。</p>
+<p>如果 <code>__all__</code> 真的没有定义，那么使用<code>from sound.effects import </code>这种语法的时候，就不会导入包 <code>sound.effects</code> 里的任何子模块。他只是把包<code>sound.effects</code>和它里面定义的所有内容导入进来（可能运行<code>__init__.py</code>里定义的初始化代码）。</p>
+<p>这会把 <code>__init__.py</code> 里面定义的所有名字导入进来。并且他不会破坏掉我们在这句话之前导入的所有明确指定的模块。看下这部分代码:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sound.effects.echo</span><br><span class="line"><span class="keyword">import</span> sound.effects.surround</span><br><span class="line"><span class="keyword">from</span> sound.effects <span class="keyword">import</span> *</span><br></pre></td></tr></table></figure>
+
+<p>这个例子中，在执行 <code>from...import</code> 前，包 <code>sound.effects</code> 中的 <code>echo</code> 和<code> surround</code> 模块都被导入到当前的命名空间中了。（当然如果定义了 <code>__all__</code> 就更没问题了）</p>
+<p>通常我们并不主张使用<code> *</code> 这种方法来导入模块，因为这种方法经常会导致代码的可读性降低。不过这样倒的确是可以省去不少敲键的功夫，而且一些模块都设计成了只能通过特定的方法导入。</p>
+<p>记住，使用 <code>from Package import specific_submodule</code> 这种方法永远不会有错。事实上，这也是推荐的方法。除非是你要导入的子模块有可能和其他包的子模块重名。</p>
+<p>如果在结构中包是一个子包（比如这个例子中对于包<code>sound</code>来说），而你又想导入兄弟包（同级别的包）你就得使用导入绝对的路径来导入。比如，如果模块<code>sound.filters.vocoder</code> 要使用包 <code>sound.effects</code> 中的模块 <code>echo</code>，你就要写成 <code>from sound.effects import echo</code>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> . <span class="keyword">import</span> echo</span><br><span class="line"><span class="keyword">from</span> .. <span class="keyword">import</span> formats</span><br><span class="line"><span class="keyword">from</span> ..filters <span class="keyword">import</span> equalizer</span><br></pre></td></tr></table></figure>
+
+<p>无论是隐式的还是显式的相对导入都是从当前模块开始的。主模块的名字永远是<code>__main__</code>，一个Python应用程序的主模块，应当总是使用绝对路径引用。</p>
+<p>包还提供一个额外的属性<code>__path__</code>。这是一个目录列表，里面每一个包含的目录都有为这个包服务的<code>__init__.py</code>，你得在其他<code>__init__.py</code>被执行前定义哦。可以修改这个变量，用来影响包含在包里面的模块和子包。</p>
+<p>这个功能并不常用，一般用来扩展包里面的模块。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/01/30/%E6%A8%A1%E5%9D%97/" data-id="cldidxnjx000220veeewm2qmu" data-title="模块" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF%E5%92%8C%E5%AD%A6%E4%B9%A0%E5%8D%9A%E5%AE%A2/" rel="tag">技术和学习博客</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/01/30/hello-world/" class="article-date">
+  <time class="dt-published" datetime="2023-01-30T03:50:27.388Z" itemprop="datePublished">2023-01-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/01/30/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/01/30/hello-world/" data-id="cldidxnjl000020ve1s181w8i" data-title="Hello World" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/PythonNotes/">PythonNotes</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF%E5%92%8C%E5%AD%A6%E4%B9%A0%E5%8D%9A%E5%AE%A2/" rel="tag">技术和学习博客</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/%E6%8A%80%E6%9C%AF%E5%92%8C%E5%AD%A6%E4%B9%A0%E5%8D%9A%E5%AE%A2/" style="font-size: 10px;">技术和学习博客</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/01/30/%E5%B8%B8%E7%94%A8%E8%A3%85%E9%A5%B0%E5%99%A8/">常用装饰器</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/30/%E6%A8%A1%E5%9D%97/">模块</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/30/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
