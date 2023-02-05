@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>ACM模式 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="ACM模式处理输入输出pythonPython的输入是字符串，所以要自己转换类型。strip()去掉左右两端的空白符，返回str。split()把字符串按空白符拆开，返回[str]。map把list里面的值映射到指定类型，返回[type]。EOF用于抓异常。print后面加逗号就不会换行，否则反之。 例子1.对10个正整数从小到大排序。 123a_1 &#x3D; input() # 读取第一行b_1 &#x3D;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ACM模式">
+<meta property="og:url" content="http://example.com/2023/02/05/ACM%E6%A8%A1%E5%BC%8F/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="ACM模式处理输入输出pythonPython的输入是字符串，所以要自己转换类型。strip()去掉左右两端的空白符，返回str。split()把字符串按空白符拆开，返回[str]。map把list里面的值映射到指定类型，返回[type]。EOF用于抓异常。print后面加逗号就不会换行，否则反之。 例子1.对10个正整数从小到大排序。 123a_1 &#x3D; input() # 读取第一行b_1 &#x3D;">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-02-05T09:56:47.000Z">
+<meta property="article:modified_time" content="2023-02-05T09:57:57.968Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="学习和技术博客">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-ACM模式" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/02/05/ACM%E6%A8%A1%E5%BC%8F/" class="article-date">
+  <time class="dt-published" datetime="2023-02-05T09:56:47.000Z" itemprop="datePublished">2023-02-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%AE%97%E6%B3%95%E9%A2%98/">算法题</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      ACM模式
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="ACM模式处理输入输出"><a href="#ACM模式处理输入输出" class="headerlink" title="ACM模式处理输入输出"></a>ACM模式处理输入输出</h1><h2 id="python"><a href="#python" class="headerlink" title="python"></a><code>python</code></h2><p><code>Python</code>的输入是字符串，所以要自己转换类型。<code>strip()</code>去掉左右两端的空白符，返回<code>str</code>。<code>split()</code>把字符串按空白符拆开，返回<code>[str]</code>。<code>map</code>把<code>list</code>里面的值映射到指定类型，返回<code>[type]</code>。<code>EOF</code>用于抓异常。<code>print</code>后面加逗号就不会换行，否则反之。</p>
+<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><p>1.对10个正整数从小到大排序。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a_1 = <span class="built_in">input</span>() <span class="comment"># 读取第一行</span></span><br><span class="line">b_1 = [<span class="built_in">int</span>(n) <span class="keyword">for</span> n <span class="keyword">in</span> a_1.split(<span class="string">&#x27; &#x27;</span>)] <span class="comment"># 切割第一行</span></span><br><span class="line">b_1.sort()</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li></li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># acm模式的代码</span></span><br><span class="line">a_1 = <span class="built_in">input</span>()</span><br><span class="line">a_2 = <span class="built_in">input</span>()</span><br><span class="line">b_1 = [<span class="built_in">int</span>(n) <span class="keyword">for</span> n <span class="keyword">in</span> a_1.split()]</span><br><span class="line">b_2 = [<span class="built_in">int</span>(n) <span class="keyword">for</span> n <span class="keyword">in</span> a_2.split()]</span><br><span class="line">b_2 = <span class="built_in">sorted</span>(b_2,reverse=<span class="literal">True</span>) <span class="comment"># reverse -- 排序规则，reverse=True 降序， reverse=False升序(默认)</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="常见输入格式要求"><a href="#常见输入格式要求" class="headerlink" title="常见输入格式要求"></a>常见输入格式要求</h3><h4 id="1-有多组输入数据，但没有具体地告诉你有多少组，只是让你对应每组输入，应该怎样输出"><a href="#1-有多组输入数据，但没有具体地告诉你有多少组，只是让你对应每组输入，应该怎样输出" class="headerlink" title="1.有多组输入数据，但没有具体地告诉你有多少组，只是让你对应每组输入，应该怎样输出?"></a>1.有多组输入数据，但没有具体地告诉你有多少组，只是让你对应每组输入，应该怎样输出?</h4><p>多样例输入一组整数，每组数据占一行，每组数据中有两个数，要求输出两个数之和。每个结果占一行。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        a,b=<span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">input</span>().strip().split())</span><br><span class="line">        <span class="built_in">print</span>(a+b)</span><br><span class="line">    <span class="keyword">except</span> EOFError:</span><br><span class="line">        <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="2-第一行为一个整数，告诉你有几组数据，剩下的行是每组的数据"><a href="#2-第一行为一个整数，告诉你有几组数据，剩下的行是每组的数据" class="headerlink" title="2.第一行为一个整数，告诉你有几组数据，剩下的行是每组的数据"></a>2.第一行为一个整数，告诉你有几组数据，剩下的行是每组的数据</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tcase=<span class="built_in">int</span>(<span class="built_in">input</span>().strip())</span><br><span class="line"><span class="keyword">for</span> <span class="keyword">case</span> <span class="keyword">in</span> <span class="built_in">range</span>(tcase):</span><br><span class="line">    a,b=<span class="built_in">map</span>(<span class="built_in">int</span>,<span class="built_in">input</span>().strip().split())</span><br><span class="line">    <span class="built_in">print</span>(a+b)</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-多组数据，并告诉何时结束输入，例如-0-0"><a href="#3-多组数据，并告诉何时结束输入，例如-0-0" class="headerlink" title="3. 多组数据，并告诉何时结束输入，例如(0,0)"></a>3. 多组数据，并告诉何时结束输入，例如<code>(0,0)</code></h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    a,b=<span class="built_in">map</span>(<span class="built_in">int</span>,<span class="built_in">input</span>().strip().split())</span><br><span class="line">    <span class="keyword">if</span> a==<span class="number">0</span> <span class="keyword">and</span> b==<span class="number">0</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="built_in">print</span>(a+b)</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-多组数据，每一行第一个数字代表这一组一共有几个数据。当行中第一个数字为0时结束。"><a href="#4-多组数据，每一行第一个数字代表这一组一共有几个数据。当行中第一个数字为0时结束。" class="headerlink" title="4.多组数据，每一行第一个数字代表这一组一共有几个数据。当行中第一个数字为0时结束。"></a>4.多组数据，每一行第一个数字代表这一组一共有几个数据。当行中第一个数字为0时结束。</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    data=<span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">int</span>,<span class="built_in">input</span>().strip().split()))</span><br><span class="line">    n,array=data[<span class="number">0</span>],data[<span class="number">1</span>:]</span><br><span class="line">    <span class="keyword">if</span> n==<span class="number">0</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">sum</span>(array))</span><br></pre></td></tr></table></figure>
+
+<h4 id="5-第一行的整数表示一共几组数据，剩下的行每一行第一个数字代表这一组一共有几个数据。"><a href="#5-第一行的整数表示一共几组数据，剩下的行每一行第一个数字代表这一组一共有几个数据。" class="headerlink" title="5.第一行的整数表示一共几组数据，剩下的行每一行第一个数字代表这一组一共有几个数据。"></a>5.第一行的整数表示一共几组数据，剩下的行每一行第一个数字代表这一组一共有几个数据。</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">tcase=<span class="built_in">int</span>(<span class="built_in">input</span>().strip())</span><br><span class="line"><span class="keyword">for</span> <span class="keyword">case</span> <span class="keyword">in</span> <span class="built_in">range</span>(tcase):</span><br><span class="line">    data = <span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">input</span>().strip().split()))</span><br><span class="line">    n,array=data[<span class="number">0</span>],data[<span class="number">1</span>:]</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">sum</span>(array))</span><br></pre></td></tr></table></figure>
+
+<h4 id="6-多组数据，但是不知道多少组。每一行第一个数字代表这一组共有几个数据。"><a href="#6-多组数据，但是不知道多少组。每一行第一个数字代表这一组共有几个数据。" class="headerlink" title="6. 多组数据，但是不知道多少组。每一行第一个数字代表这一组共有几个数据。"></a>6. 多组数据，但是不知道多少组。每一行第一个数字代表这一组共有几个数据。</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        data=<span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">int</span>,<span class="built_in">input</span>().strip().split()))</span><br><span class="line">        n,array=data[<span class="number">0</span>],data[<span class="number">1</span>:]</span><br><span class="line">        <span class="built_in">print</span>(<span class="built_in">sum</span>(array))</span><br><span class="line">    <span class="keyword">except</span> EOFError:</span><br><span class="line">        <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="7-多组数据，但是不知道有多少组，每一组的数据个数也不一样"><a href="#7-多组数据，但是不知道有多少组，每一组的数据个数也不一样" class="headerlink" title="7.多组数据，但是不知道有多少组，每一组的数据个数也不一样"></a>7.多组数据，但是不知道有多少组，每一组的数据个数也不一样</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        data=<span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">input</span>().strip().split()))</span><br><span class="line">        <span class="built_in">print</span>(<span class="built_in">sum</span>(data))</span><br><span class="line">    <span class="keyword">except</span> EOFError:</span><br><span class="line">        <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="8-输入有两行，第一行n，第二行是n个空格隔开的字符串"><a href="#8-输入有两行，第一行n，第二行是n个空格隔开的字符串" class="headerlink" title="8.输入有两行，第一行n，第二行是n个空格隔开的字符串"></a>8.输入有两行，第一行<code>n</code>，第二行是<code>n</code>个空格隔开的字符串</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">n=<span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line">words=[x <span class="keyword">for</span> x <span class="keyword">in</span> <span class="built_in">input</span>().strip().split()]</span><br><span class="line">words.sort()</span><br><span class="line"><span class="keyword">for</span> word <span class="keyword">in</span> words:</span><br><span class="line">    <span class="built_in">print</span>(word, end=<span class="string">&#x27; &#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>()</span><br></pre></td></tr></table></figure>
+
+<h4 id="9-多个组，每个测试是一行，字符串通过空格隔开"><a href="#9-多个组，每个测试是一行，字符串通过空格隔开" class="headerlink" title="9.多个组，每个测试是一行，字符串通过空格隔开"></a>9.多个组，每个测试是一行，字符串通过空格隔开</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        words=[x <span class="keyword">for</span> x <span class="keyword">in</span> <span class="built_in">input</span>().strip().split()]</span><br><span class="line">        words.sort()</span><br><span class="line">        <span class="keyword">for</span> word <span class="keyword">in</span> words:</span><br><span class="line">            <span class="built_in">print</span>(word,end=<span class="string">&#x27; &#x27;</span>)</span><br><span class="line">        <span class="built_in">print</span>()</span><br><span class="line">    <span class="keyword">except</span> EOFError:</span><br><span class="line">        <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="10-多个组，每个测试组是一行，字符串通过空格隔开。输出-每个字符串用-隔开，无结尾空格。"><a href="#10-多个组，每个测试组是一行，字符串通过空格隔开。输出-每个字符串用-隔开，无结尾空格。" class="headerlink" title="10. 多个组，每个测试组是一行，字符串通过空格隔开。输出: 每个字符串用,隔开，无结尾空格。"></a>10. 多个组，每个测试组是一行，字符串通过空格隔开。输出: 每个字符串用<code>,</code>隔开，无结尾空格。</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">       <span class="keyword">try</span>:</span><br><span class="line">           words=[x <span class="keyword">for</span> x <span class="keyword">in</span> <span class="built_in">input</span>().strip().split()]</span><br><span class="line">           words.sort()</span><br><span class="line">           <span class="keyword">for</span> word <span class="keyword">in</span> words[:-<span class="number">1</span>]:</span><br><span class="line">               <span class="built_in">print</span>(words, end=<span class="string">&#x27; &#x27;</span>)</span><br><span class="line">           <span class="built_in">print</span>(sords[-<span class="number">1</span>])</span><br><span class="line">       <span class="keyword">except</span> EOFError:</span><br><span class="line">           <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/05/ACM%E6%A8%A1%E5%BC%8F/" data-id="cldr7p5j20000nsve55ro4a2g" data-title="ACM模式" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E5%92%8C%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2/" rel="tag">学习和技术博客</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2023/02/05/%E5%B8%B8%E7%94%A8%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">常用内置函数</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/PythonNotes/">PythonNotes</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AE%97%E6%B3%95%E9%A2%98/">算法题</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E5%92%8C%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2/" rel="tag">学习和技术博客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF%E5%92%8C%E5%AD%A6%E4%B9%A0%E5%8D%9A%E5%AE%A2/" rel="tag">技术和学习博客</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/%E5%AD%A6%E4%B9%A0%E5%92%8C%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2/" style="font-size: 10px;">学习和技术博客</a> <a href="/tags/%E6%8A%80%E6%9C%AF%E5%92%8C%E5%AD%A6%E4%B9%A0%E5%8D%9A%E5%AE%A2/" style="font-size: 20px;">技术和学习博客</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/02/05/ACM%E6%A8%A1%E5%BC%8F/">ACM模式</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/05/%E5%B8%B8%E7%94%A8%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/">常用内置函数</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/05/%E9%9B%86%E5%90%88/">集合</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/05/%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8/">迭代器与生成器</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/30/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">基本数据类型</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
