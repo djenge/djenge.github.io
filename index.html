@@ -71,6 +71,60 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-常用内置函数" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/02/05/%E5%B8%B8%E7%94%A8%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/" class="article-date">
+  <time class="dt-published" datetime="2023-02-05T09:15:26.000Z" itemprop="datePublished">2023-02-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/PythonNotes/">PythonNotes</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/02/05/%E5%B8%B8%E7%94%A8%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/">常用内置函数</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="常用内置函数"><a href="#常用内置函数" class="headerlink" title="常用内置函数"></a>常用内置函数</h1><h2 id="map"><a href="#map" class="headerlink" title="map()"></a><code>map()</code></h2><p><code>map()</code>会根据提供的函数对指定序列做映射。</p>
+<p>第一个参数<code>function</code>以参数序列中的每一个元素调用<code>function</code>函数，返回每次<code>function</code>函数返回值的新列表。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法:"></a>语法:</h3><p><code>map()</code>函数语法:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">map</span>(function, iterable, ...)</span><br></pre></td></tr></table></figure>
+
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p><code>function</code> – 函数</p>
+<p><code>iterable</code>–一个或多个序列</p>
+<h3 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h3><p>一个迭代器</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">def</span> <span class="title function_">square</span>(<span class="params">x</span>):</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">return</span> x**<span class="number">2</span></span><br><span class="line">...</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">map</span>(square, [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>])   <span class="comment"># 计算列表中各个元素的平方</span></span><br><span class="line">&lt;<span class="built_in">map</span> <span class="built_in">object</span> at <span class="number">0x000001AA7214A3B0</span>&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span>(<span class="built_in">map</span>(square, [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]))      <span class="comment"># 使用list()转换为列表</span></span><br><span class="line">[<span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">16</span>, <span class="number">25</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span>(<span class="built_in">map</span>(<span class="keyword">lambda</span> x: x**<span class="number">2</span>, [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]))   <span class="comment"># 使用lambda匿名函数</span></span><br><span class="line">[<span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">16</span>, <span class="number">25</span>]</span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/05/%E5%B8%B8%E7%94%A8%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/" data-id="cldr671wu00003svehgrrfcg8" data-title="常用内置函数" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF%E5%92%8C%E5%AD%A6%E4%B9%A0%E5%8D%9A%E5%AE%A2/" rel="tag">技术和学习博客</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-集合" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2023/02/05/%E9%9B%86%E5%90%88/" class="article-date">
@@ -886,6 +940,10 @@
       <ul>
         
           <li>
+            <a href="/2023/02/05/%E5%B8%B8%E7%94%A8%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/">常用内置函数</a>
+          </li>
+        
+          <li>
             <a href="/2023/02/05/%E9%9B%86%E5%90%88/">集合</a>
           </li>
         
@@ -899,10 +957,6 @@
         
           <li>
             <a href="/2023/01/30/python3%E6%B3%A8%E9%87%8A/">python3注释</a>
-          </li>
-        
-          <li>
-            <a href="/2023/01/30/%E8%84%9A%E6%9C%AC%E5%BC%8F%E7%BC%96%E7%A8%8B/">脚本式编程</a>
           </li>
         
       </ul>

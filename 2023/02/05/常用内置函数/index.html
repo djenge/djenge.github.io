@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>脚本式编程 | Hexo</title>
+  <title>常用内置函数 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Python的编程模式分为: 交互式,脚本式 脚本式编程在Linux&#x2F;Unix系统中，可以在脚本顶部添加以下命令让Python可以像SHELL脚本一样可直接执行 1#! &#x2F;usr&#x2F;bin&#x2F;env python3  然后修改脚本权限，使其有执行权限，命令如下: 1chmod +x hello.py  执行以下命令: 1.&#x2F;hello.py">
+  <meta name="description" content="常用内置函数map()map()会根据提供的函数对指定序列做映射。 第一个参数function以参数序列中的每一个元素调用function函数，返回每次function函数返回值的新列表。 语法:map()函数语法: 1map(function, iterable, ...)  参数function – 函数 iterable–一个或多个序列 返回值一个迭代器 12345678910&gt;&amp;gt">
 <meta property="og:type" content="article">
-<meta property="og:title" content="脚本式编程">
-<meta property="og:url" content="http://example.com/2023/01/30/%E8%84%9A%E6%9C%AC%E5%BC%8F%E7%BC%96%E7%A8%8B/index.html">
+<meta property="og:title" content="常用内置函数">
+<meta property="og:url" content="http://example.com/2023/02/05/%E5%B8%B8%E7%94%A8%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Python的编程模式分为: 交互式,脚本式 脚本式编程在Linux&#x2F;Unix系统中，可以在脚本顶部添加以下命令让Python可以像SHELL脚本一样可直接执行 1#! &#x2F;usr&#x2F;bin&#x2F;env python3  然后修改脚本权限，使其有执行权限，命令如下: 1chmod +x hello.py  执行以下命令: 1.&#x2F;hello.py">
+<meta property="og:description" content="常用内置函数map()map()会根据提供的函数对指定序列做映射。 第一个参数function以参数序列中的每一个元素调用function函数，返回每次function函数返回值的新列表。 语法:map()函数语法: 1map(function, iterable, ...)  参数function – 函数 iterable–一个或多个序列 返回值一个迭代器 12345678910&gt;&amp;gt">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-01-30T08:00:23.000Z">
-<meta property="article:modified_time" content="2023-01-30T08:05:28.261Z">
+<meta property="article:published_time" content="2023-02-05T09:15:26.000Z">
+<meta property="article:modified_time" content="2023-02-05T09:16:26.327Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="技术和学习博客">
 <meta name="twitter:card" content="summary">
@@ -74,10 +74,10 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-脚本式编程" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-常用内置函数" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2023/01/30/%E8%84%9A%E6%9C%AC%E5%BC%8F%E7%BC%96%E7%A8%8B/" class="article-date">
-  <time class="dt-published" datetime="2023-01-30T08:00:23.000Z" itemprop="datePublished">2023-01-30</time>
+    <a href="/2023/02/05/%E5%B8%B8%E7%94%A8%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/" class="article-date">
+  <time class="dt-published" datetime="2023-02-05T09:15:26.000Z" itemprop="datePublished">2023-02-05</time>
 </a>
     
   <div class="article-category">
@@ -92,7 +92,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      脚本式编程
+      常用内置函数
     </h1>
   
 
@@ -100,21 +100,21 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p><code>Python</code>的编程模式分为: <code>交互式</code>,<code>脚本式</code></p>
-<h1 id="脚本式编程"><a href="#脚本式编程" class="headerlink" title="脚本式编程"></a>脚本式编程</h1><p>在<code>Linux/Unix</code>系统中，可以在脚本顶部添加以下命令让<code>Python</code>可以像<code>SHELL</code>脚本一样可直接执行</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#! /usr/bin/env python3</span></span><br></pre></td></tr></table></figure>
+        <h1 id="常用内置函数"><a href="#常用内置函数" class="headerlink" title="常用内置函数"></a>常用内置函数</h1><h2 id="map"><a href="#map" class="headerlink" title="map()"></a><code>map()</code></h2><p><code>map()</code>会根据提供的函数对指定序列做映射。</p>
+<p>第一个参数<code>function</code>以参数序列中的每一个元素调用<code>function</code>函数，返回每次<code>function</code>函数返回值的新列表。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法:"></a>语法:</h3><p><code>map()</code>函数语法:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">map</span>(function, iterable, ...)</span><br></pre></td></tr></table></figure>
 
-<p>然后修改脚本权限，使其有执行权限，命令如下:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod +x hello.py</span><br></pre></td></tr></table></figure>
-
-<p>执行以下命令:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./hello.py</span><br></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p><code>function</code> – 函数</p>
+<p><code>iterable</code>–一个或多个序列</p>
+<h3 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h3><p>一个迭代器</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">def</span> <span class="title function_">square</span>(<span class="params">x</span>):</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">return</span> x**<span class="number">2</span></span><br><span class="line">...</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">map</span>(square, [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>])   <span class="comment"># 计算列表中各个元素的平方</span></span><br><span class="line">&lt;<span class="built_in">map</span> <span class="built_in">object</span> at <span class="number">0x000001AA7214A3B0</span>&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span>(<span class="built_in">map</span>(square, [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]))      <span class="comment"># 使用list()转换为列表</span></span><br><span class="line">[<span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">16</span>, <span class="number">25</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span>(<span class="built_in">map</span>(<span class="keyword">lambda</span> x: x**<span class="number">2</span>, [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]))   <span class="comment"># 使用lambda匿名函数</span></span><br><span class="line">[<span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">16</span>, <span class="number">25</span>]</span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure>
 
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/01/30/%E8%84%9A%E6%9C%AC%E5%BC%8F%E7%BC%96%E7%A8%8B/" data-id="cldr3xjau0001vovehyon7izi" data-title="脚本式编程" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2023/02/05/%E5%B8%B8%E7%94%A8%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/" data-id="cldr671wu00003svehgrrfcg8" data-title="常用内置函数" class="article-share-link">Share</a>
       
       
       
@@ -126,19 +126,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2023/01/30/python3%E6%B3%A8%E9%87%8A/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          python3注释
-        
-      </div>
-    </a>
   
-  
-    <a href="/2023/01/30/%E5%B8%B8%E7%94%A8%E8%A3%85%E9%A5%B0%E5%99%A8/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2023/02/05/%E9%9B%86%E5%90%88/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">常用装饰器</div>
+      <div class="article-nav-title">集合</div>
     </a>
   
 </nav>
