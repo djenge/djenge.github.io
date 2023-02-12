@@ -14,7 +14,7 @@
 <meta property="og:description" content="常用内置函数map()map()会根据提供的函数对指定序列做映射。 第一个参数function以参数序列中的每一个元素调用function函数，返回每次function函数返回值的新列表。 语法:map()函数语法: 1map(function, iterable, ...)  参数function – 函数 iterable–一个或多个序列 返回值一个迭代器 12345678910&gt;&amp;gt">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-02-05T09:15:26.000Z">
-<meta property="article:modified_time" content="2023-02-05T09:16:26.327Z">
+<meta property="article:modified_time" content="2023-02-11T08:15:43.471Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="技术和学习博客">
 <meta name="twitter:card" content="summary">
@@ -110,6 +110,22 @@
 <h3 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h3><p>一个迭代器</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">def</span> <span class="title function_">square</span>(<span class="params">x</span>):</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">return</span> x**<span class="number">2</span></span><br><span class="line">...</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">map</span>(square, [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>])   <span class="comment"># 计算列表中各个元素的平方</span></span><br><span class="line">&lt;<span class="built_in">map</span> <span class="built_in">object</span> at <span class="number">0x000001AA7214A3B0</span>&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span>(<span class="built_in">map</span>(square, [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]))      <span class="comment"># 使用list()转换为列表</span></span><br><span class="line">[<span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">16</span>, <span class="number">25</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span>(<span class="built_in">map</span>(<span class="keyword">lambda</span> x: x**<span class="number">2</span>, [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]))   <span class="comment"># 使用lambda匿名函数</span></span><br><span class="line">[<span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">16</span>, <span class="number">25</span>]</span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure>
 
+<h2 id="bin"><a href="#bin" class="headerlink" title="bin()"></a><code>bin()</code></h2><p><code>bin()</code>返回一个整数<code>int</code>或者长整数<code>long int</code>的二进制表示。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">bin</span>(x)</span><br></pre></td></tr></table></figure>
+
+<p><code>x</code>为<code>int</code>或者<code>long int </code>数字。返回值为字符串。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;<span class="built_in">bin</span>(<span class="number">10</span>)</span><br><span class="line"><span class="string">&#x27;0b1010&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">bin</span>(<span class="number">20</span>)</span><br><span class="line"><span class="string">&#x27;0b10100&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="List-count-方法"><a href="#List-count-方法" class="headerlink" title="List  count()方法"></a><code>List  count()</code>方法</h2><p><code>count()</code>方法统计某个元素在列表中出现的次数。</p>
+<p><code>count()</code>方法语法:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span>.count(obj)</span><br></pre></td></tr></table></figure>
+
+<p><code>obj-列表中统计的对象</code></p>
+<p>返回值为元素在列表中出现的次数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">aList = [<span class="number">123</span>, <span class="string">&#x27;xyz&#x27;</span>, <span class="string">&#x27;zara&#x27;</span>, <span class="string">&#x27;abc&#x27;</span>, <span class="number">123</span>];</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span> <span class="string">&quot;Count for 123 : &quot;</span>, aList.count(<span class="number">123</span>);</span><br><span class="line"><span class="built_in">print</span> <span class="string">&quot;Count for zara : &quot;</span>, aList.count(<span class="string">&#x27;zara&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Count <span class="keyword">for</span> <span class="number">123</span> :  <span class="number">2</span></span><br><span class="line">Count <span class="keyword">for</span> zara :  <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -197,23 +213,23 @@
       <ul>
         
           <li>
+            <a href="/2023/02/10/%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">常用数据结构</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/07/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">面向对象</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/07/%E5%BC%82%E5%B8%B8%E4%B8%8E%E9%94%99%E8%AF%AF/">异常与错误</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/07/%E5%87%BD%E6%95%B0/">函数</a>
+          </li>
+        
+          <li>
             <a href="/2023/02/05/ACM%E6%A8%A1%E5%BC%8F/">ACM模式</a>
-          </li>
-        
-          <li>
-            <a href="/2023/02/05/%E5%B8%B8%E7%94%A8%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/">常用内置函数</a>
-          </li>
-        
-          <li>
-            <a href="/2023/02/05/%E9%9B%86%E5%90%88/">集合</a>
-          </li>
-        
-          <li>
-            <a href="/2023/02/05/%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8/">迭代器与生成器</a>
-          </li>
-        
-          <li>
-            <a href="/2023/01/30/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">基本数据类型</a>
           </li>
         
       </ul>

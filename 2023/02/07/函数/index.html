@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>函数 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="函数定义一个函数函数第一行语句可以选择性地使用文档字符串–用于存放函说明。 return表达式结束函数，不带表达式的return相当于返回None。 参数传递在python中，类型属于对象，对象有不同类型的区分，变量是没有类型的: 123a &#x3D; [1,2,3]a &#x3D; &quot;Runoob&quot;  以上代码中[1,2,3]是List类型，&quot;Runoob&quot;是String类">
+<meta property="og:type" content="article">
+<meta property="og:title" content="函数">
+<meta property="og:url" content="http://example.com/2023/02/07/%E5%87%BD%E6%95%B0/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="函数定义一个函数函数第一行语句可以选择性地使用文档字符串–用于存放函说明。 return表达式结束函数，不带表达式的return相当于返回None。 参数传递在python中，类型属于对象，对象有不同类型的区分，变量是没有类型的: 123a &#x3D; [1,2,3]a &#x3D; &quot;Runoob&quot;  以上代码中[1,2,3]是List类型，&quot;Runoob&quot;是String类">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-02-06T17:03:28.000Z">
+<meta property="article:modified_time" content="2023-02-09T08:42:54.126Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="技术和学习博客">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-函数" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/02/07/%E5%87%BD%E6%95%B0/" class="article-date">
+  <time class="dt-published" datetime="2023-02-06T17:03:28.000Z" itemprop="datePublished">2023-02-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/PythonNotes/">PythonNotes</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      函数
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><h2 id="定义一个函数"><a href="#定义一个函数" class="headerlink" title="定义一个函数"></a>定义一个函数</h2><p>函数第一行语句可以选择性地使用文档字符串–用于存放函说明。</p>
+<p><code>return</code>表达式结束函数，不带表达式的<code>return</code>相当于返回<code>None</code>。</p>
+<h2 id="参数传递"><a href="#参数传递" class="headerlink" title="参数传递"></a>参数传递</h2><p>在<code>python</code>中，类型属于对象，对象有不同类型的区分，变量是没有类型的:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"></span><br><span class="line">a = <span class="string">&quot;Runoob&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>以上代码中<code>[1,2,3]</code>是<code>List</code>类型，<code>&quot;Runoob&quot;</code>是<code>String</code>类型，而变量<code>a</code>是没有类型的，它仅仅是一个对象的引用(一个指针)，可以是指向<code>List</code>类型对象，也可以指向<code>String</code>类型对象。</p>
+<h2 id="可更改-mutable-与不可更改-immutable-对象"><a href="#可更改-mutable-与不可更改-immutable-对象" class="headerlink" title="可更改(mutable)与不可更改(immutable)对象"></a>可更改(<code>mutable</code>)与不可更改(<code>immutable</code>)对象</h2><p>在<code>python</code>中，<code>strings</code>,<code>tuples</code>,<code>numbers</code>是不可更改对象，而<code>list</code>,<code>dict</code>等则是可以修改的对象。</p>
+<p><code>python</code>的参数传递:</p>
+<p><code>不可变类型</code>:类似于<code>C++</code>的值传递，如整数，字符串，元组。如<code>fun(a)</code>, 传递的只是<code>a</code>的值，没有影响<code>a</code>对象本身。如果在<code>fun(a)</code>内部修改<code>a</code>的值，则是新生成一个<code>a</code>的对象。</p>
+<p><code>可变类型</code>: 类似于<code>C++</code>的引用传递，如列表、字典。如<code>fun(la)</code>，则是将<code>la</code>真正的传过去，修改后<code>fun</code>外部的<code>la</code>也会受影响。</p>
+<p><code>python</code> 中一切都是对象，严格意义我们不能说值传递还是引用传递，我们应该说传不可变对象和传可变对象。</p>
+<h3 id="python传不可变对象实例"><a href="#python传不可变对象实例" class="headerlink" title="python传不可变对象实例"></a><code>python</code>传不可变对象实例</h3><p>通过<code>id()</code>函数来查看内存地址变化:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">change</span>(<span class="params">a</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">id</span>(a))	<span class="comment"># 指向的是同一个对象</span></span><br><span class="line">    a = <span class="number">10</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">id</span>(a))	<span class="comment"># 一个新对象</span></span><br><span class="line">    </span><br><span class="line">a = <span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(a))</span><br><span class="line">change(a)</span><br></pre></td></tr></table></figure>
+
+<p>执行结果为:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1675255939312</span></span><br><span class="line"><span class="number">1675255939312</span></span><br><span class="line"><span class="number">1675255939600</span></span><br></pre></td></tr></table></figure>
+
+<p>可以看见在调用函数前后，形参和实参指向的是同一个对象（对象<code> id</code> 相同），在函数内部修改形参后，形参指向的是不同的 <code>id</code>。</p>
+<h3 id="传可变对象实例"><a href="#传可变对象实例" class="headerlink" title="传可变对象实例"></a>传可变对象实例</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="comment"># 可写函数说明</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">def</span> <span class="title function_">changeme</span>(<span class="params">mylist</span>):</span><br><span class="line"><span class="meta">... </span>    <span class="string">&quot;修改传入的列表&quot;</span></span><br><span class="line"><span class="meta">... </span>    mylist.append([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>])</span><br><span class="line"><span class="meta">... </span>    <span class="built_in">print</span>(<span class="string">&quot;函数内取值:&quot;</span>, mylist)</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">return</span></span><br><span class="line">...</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="comment"># 调用changeme函数</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>mylist = [<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>changeme(mylist)</span><br><span class="line">函数内取值: [<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(<span class="string">&quot;函数外取值: &quot;</span>, mylist)</span><br><span class="line">函数外取值:  [<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]]</span><br></pre></td></tr></table></figure>
+
+<h2 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h2><p>以下是调用函数时可使用的正式参数类型: <strong>必须参数</strong>, <strong>关键字参数</strong>，<strong>默认参数</strong>, <strong>不定长参数</strong>。</p>
+<h3 id="必须参数"><a href="#必须参数" class="headerlink" title="必须参数"></a>必须参数</h3><p>必须参数必须要以正确的顺序传入函数，调用时的数量必须和声明时一样。</p>
+<p>调用<code>printme()</code>函数，你必须传入一个参数，不然会出现语法错误。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="comment"># 可写函数说明</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">def</span> <span class="title function_">printme</span>(<span class="params"><span class="built_in">str</span></span>):</span><br><span class="line"><span class="meta">... </span>    <span class="string">&quot;打印任何传入的字符串&quot;</span></span><br><span class="line"><span class="meta">... </span>    <span class="built_in">print</span>(<span class="built_in">str</span>)</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">return</span></span><br><span class="line">...</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="comment"># 调用printme函数，不加参数会报错</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>printme()</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">&quot;&lt;stdin&gt;&quot;</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">TypeError: printme() missing <span class="number">1</span> required positional argument: <span class="string">&#x27;str&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="关键字参数"><a href="#关键字参数" class="headerlink" title="关键字参数"></a>关键字参数</h3><p>使用关键字参数允许函数调用时参数的顺序与声明时不一致，因为<code>Python</code>解释器能够用参数名匹配参数值。</p>
+<p>以下实例在函数<code>printme()</code>调用时使用参数名:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 可写函数说明</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">printme</span>(<span class="params"><span class="built_in">str</span></span>):</span><br><span class="line">    <span class="string">&quot;打印任何传入的字符串&quot;</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">str</span>)</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用printme函数</span></span><br><span class="line">printme(<span class="built_in">str</span>=<span class="string">&quot;菜鸟教程&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>结果为</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">菜鸟教程</span><br></pre></td></tr></table></figure>
+
+<p>以下实例中演示了函数参数的使用不需要使用指定顺序：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="comment"># 可写函数说明</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">def</span> <span class="title function_">printinfo</span>(<span class="params">name, age</span>):</span><br><span class="line"><span class="meta">... </span>    <span class="string">&quot;打印任何传入的字符串&quot;</span></span><br><span class="line"><span class="meta">... </span>    <span class="built_in">print</span>(<span class="string">&quot;名字: &quot;</span>, name)</span><br><span class="line"><span class="meta">... </span>    <span class="built_in">print</span>(<span class="string">&quot;年龄: &quot;</span>, age)</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">return</span></span><br><span class="line">...</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="comment"># 调用printinfo函数</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>printinfo(age = <span class="number">50</span>, name=<span class="string">&quot;runoob&quot;</span>)</span><br><span class="line">名字:  runoob</span><br><span class="line">年龄:  <span class="number">50</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="默认参数"><a href="#默认参数" class="headerlink" title="默认参数"></a>默认参数</h3><p>调用函数时，如果没有传递参数，则会使用默认参数。以下示例中如果没有传入<code>age</code>参数，则使用默认值</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">def</span> <span class="title function_">printinfo</span>(<span class="params">name, age=<span class="number">35</span></span>):</span><br><span class="line"><span class="meta">... </span>    <span class="string">&quot;打印任何传入的字符串&quot;</span></span><br><span class="line"><span class="meta">... </span>    <span class="built_in">print</span>(<span class="string">&quot;名字: &quot;</span>, name)</span><br><span class="line"><span class="meta">... </span>    <span class="built_in">print</span>(<span class="string">&quot;年龄: &quot;</span>, age)</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">return</span></span><br><span class="line">...</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="comment"># 调用printinfo函数</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>printinfo(age=<span class="number">50</span>, name=<span class="string">&#x27;runoob&#x27;</span>)</span><br><span class="line">名字:  runoob</span><br><span class="line">年龄:  <span class="number">50</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>printinfo(name=<span class="string">&#x27;runoob&#x27;</span>)</span><br><span class="line">名字:  runoob</span><br><span class="line">年龄:  <span class="number">35</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="不定长参数"><a href="#不定长参数" class="headerlink" title="不定长参数"></a>不定长参数</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">functionname</span>(<span class="params">[formal_args,] *var_args_tuple </span>):</span><br><span class="line">   <span class="string">&quot;函数_文档字符串&quot;</span></span><br><span class="line">   function_suite</span><br><span class="line">   <span class="keyword">return</span> [expression]</span><br></pre></td></tr></table></figure>
+
+<p>加入了星号<code>*</code>的参数会以元组(<code>tuple</code>)的形式导入，存放所有未命名的变量参数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">def</span> <span class="title function_">printinfo</span>(<span class="params">arg1, *vartuple</span>):</span><br><span class="line"><span class="meta">... </span>    <span class="string">&quot;打印任何传入的参数&quot;</span></span><br><span class="line"><span class="meta">... </span>    <span class="built_in">print</span>(<span class="string">&quot;输出: &quot;</span>)</span><br><span class="line"><span class="meta">... </span>    <span class="built_in">print</span>(arg1)</span><br><span class="line"><span class="meta">... </span>    <span class="built_in">print</span>(vartuple)</span><br><span class="line">...</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="comment"># 调用printinfo函数</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>printinfo(<span class="number">70</span>, <span class="number">60</span>, <span class="number">50</span>)</span><br><span class="line">输出:</span><br><span class="line"><span class="number">70</span></span><br><span class="line">(<span class="number">60</span>, <span class="number">50</span>)</span><br></pre></td></tr></table></figure>
+
+<p>如果在函数调用时没有指定参数，它就是一个空元组。我们也可以不向函数传递未命名的变量。如下实例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">def</span> <span class="title function_">printinfo</span>(<span class="params">arg1, *vartuple</span>):</span><br><span class="line"><span class="meta">... </span>    <span class="string">&quot;打印任何传入的参数&quot;</span></span><br><span class="line"><span class="meta">... </span>    <span class="built_in">print</span>(<span class="string">&quot;输出: &quot;</span>)</span><br><span class="line"><span class="meta">... </span>    <span class="built_in">print</span>(arg1)</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">for</span> var <span class="keyword">in</span> vartuple:</span><br><span class="line"><span class="meta">... </span>            <span class="built_in">print</span>(var)</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">return</span></span><br><span class="line">...</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="comment"># 调用printinfo函数</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>printinfo(<span class="number">10</span>)</span><br><span class="line">输出:</span><br><span class="line"><span class="number">10</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>printinfo(<span class="number">70</span>, <span class="number">60</span>, <span class="number">50</span>)</span><br><span class="line">输出:</span><br><span class="line"><span class="number">70</span></span><br><span class="line"><span class="number">60</span></span><br><span class="line"><span class="number">50</span></span><br></pre></td></tr></table></figure>
+
+<p>还有一种就是参数带两个星号<code>**</code> </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">functionname</span>(<span class="params">[formal_args,] **var_args_dict </span>):</span><br><span class="line">   <span class="string">&quot;函数_文档字符串&quot;</span></span><br><span class="line">   function_suite</span><br><span class="line">   <span class="keyword">return</span> [expression]</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 可写函数说明</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">printinfo</span>(<span class="params"> arg1, **vardict </span>):</span><br><span class="line">   <span class="string">&quot;打印任何传入的参数&quot;</span></span><br><span class="line">   <span class="built_in">print</span> (<span class="string">&quot;输出: &quot;</span>)</span><br><span class="line">   <span class="built_in">print</span> (arg1)</span><br><span class="line">   <span class="built_in">print</span> (vardict)</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 调用printinfo 函数</span></span><br><span class="line">printinfo(<span class="number">1</span>, a=<span class="number">2</span>,b=<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+
+<p>输出结果为</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输出: </span><br><span class="line">1</span><br><span class="line">&#123;&#x27;a&#x27;: 2, &#x27;b&#x27;: 3&#125;</span><br></pre></td></tr></table></figure>
+
+<p>声明函数时，参数中星号 <code>*</code> 可以单独出现，例如:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">f</span>(<span class="params">a,b,*,c</span>):</span><br><span class="line">    <span class="keyword">return</span> a+b+c</span><br></pre></td></tr></table></figure>
+
+<p>如果单独出现星号<code>*</code>，则<code>*</code>后的参数必须用关键字传入:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">def</span> <span class="title function_">f</span>(<span class="params">a,b,*,c</span>):</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">return</span> a+b+c</span><br><span class="line">...</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>)    <span class="comment"># 报错</span></span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">&quot;&lt;stdin&gt;&quot;</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">TypeError: f() takes <span class="number">2</span> positional arguments but <span class="number">3</span> were given</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f(<span class="number">1</span>,<span class="number">2</span>,c=<span class="number">3</span>) <span class="comment"># 正常</span></span><br><span class="line"><span class="number">6</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="匿名参数"><a href="#匿名参数" class="headerlink" title="匿名参数"></a>匿名参数</h3><p><code>Python</code>用<code>lambda</code>来创建匿名函数。</p>
+<p>所谓匿名，即不再使用<code>def</code>语句这样的标准形式定义一个函数。</p>
+<p><code>lambda</code>是一个表达式，而不是一个代码块，函数体比<code>def</code>简单很多。<code>lambda</code>函数拥有自己的命名空间，且不能访问自己参数列表之外或全局命名空间里的参数。</p>
+<p>虽然<code>lambda</code>函数看起来只能写一行，却不等同于<code>C</code>或<code>C++</code>的内联函数，后者的目的是调用小函数不占用栈内存从而增加运行效率。</p>
+<p><code>lambda</code>函数的语法只包含一个语句，如下:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">lambda</span> [arg1 [,arg2,.....argn]]:expression</span><br></pre></td></tr></table></figure>
+
+<p>设置参数<code>a</code>加上10:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="keyword">lambda</span> a: a+<span class="number">10</span></span><br><span class="line"><span class="built_in">print</span>(x(<span class="number">5</span>))</span><br></pre></td></tr></table></figure>
+
+<p>输出结果为</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">15</span><br></pre></td></tr></table></figure>
+
+<p>以下<code>lambda</code>函数设置两个参数:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 可写函数说明</span></span><br><span class="line"><span class="built_in">sum</span> = <span class="keyword">lambda</span> arg1, arg2: arg1 + agr2</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用sum寒湖是</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;相加后的值为 : &quot;</span>, <span class="built_in">sum</span>(<span class="number">10</span>, <span class="number">20</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;相加后的值为 : &quot;</span>, <span class="built_in">sum</span>(<span class="number">20</span>, <span class="number">20</span>))</span><br></pre></td></tr></table></figure>
+
+<p>以上输出结果为</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">相加后的值为 :  30</span><br><span class="line">相加后的值为 :  40</span><br></pre></td></tr></table></figure>
+
+<p>我们可以将匿名函数封装在一个函数内，这样可以使用同样的代码来创建多个匿名函数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">myfunc</span>(<span class="params">n</span>):</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">lambda</span> a : a * n</span><br><span class="line"></span><br><span class="line">mydoubler = myfunc(<span class="number">2</span>)</span><br><span class="line">mytripler = myfunc(<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mydoubler(<span class="number">11</span>))</span><br><span class="line"><span class="built_in">print</span>(mytripler(<span class="number">11</span>))</span><br></pre></td></tr></table></figure>
+
+<p>执行结果为</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">22</span></span><br><span class="line"><span class="number">33</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="return语句"><a href="#return语句" class="headerlink" title="return语句"></a><code>return</code>语句</h3><p><code>return</code> 语句用于退出函数，选择性地向调用方返回一个表达式。不带参数值的 <code>return</code> 语句返回 <code>None</code>。之前的例子都没有示范如何返回数值，以下实例演示了 <code>return</code> 语句的用法：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 可写函数说明</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">sum</span>(<span class="params"> arg1, arg2 </span>):</span><br><span class="line">   <span class="comment"># 返回2个参数的和.&quot;</span></span><br><span class="line">   total = arg1 + arg2</span><br><span class="line">   <span class="built_in">print</span> (<span class="string">&quot;函数内 : &quot;</span>, total)</span><br><span class="line">   <span class="keyword">return</span> total</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 调用sum函数</span></span><br><span class="line">total = <span class="built_in">sum</span>( <span class="number">10</span>, <span class="number">20</span> )</span><br><span class="line"><span class="built_in">print</span> (<span class="string">&quot;函数外 : &quot;</span>, total)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">函数内 :  <span class="number">30</span></span><br><span class="line">函数外 :  <span class="number">30</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="强制位置参数"><a href="#强制位置参数" class="headerlink" title="强制位置参数"></a>强制位置参数</h3><p><code>Python3.8</code> 新增了一个函数形参语法<code> /</code> 用来指明函数形参必须使用指定位置参数，不能使用关键字参数的形式。</p>
+<p>在以下的例子中，形参 <code>a </code>和 <code>b </code>必须使用指定位置参数，<code>c</code> 或 <code>d</code> 可以是位置形参或关键字形参，而 <code>e</code> 和 <code>f</code> 要求为关键字形参:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">f</span>(<span class="params">a, b, /, c, d, *, e, f</span>):</span><br><span class="line">    <span class="built_in">print</span>(a, b, c, d, e, f)</span><br></pre></td></tr></table></figure>
+
+<p>以下使用方法是正确的:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f(<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, d=<span class="number">40</span>, e=<span class="number">50</span>, f=<span class="number">60</span>)</span><br></pre></td></tr></table></figure>
+
+<p>以下使用方法会发生错误:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f(<span class="number">10</span>, b=<span class="number">20</span>, c=<span class="number">30</span>, d=<span class="number">40</span>, e=<span class="number">50</span>, f=<span class="number">60</span>)   <span class="comment"># b 不能使用关键字参数的形式</span></span><br><span class="line">f(<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>, <span class="number">50</span>, f=<span class="number">60</span>)           <span class="comment"># e 必须使用关键字参数的形式</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/07/%E5%87%BD%E6%95%B0/" data-id="cle1bhej200009ove8kjkg1o2" data-title="函数" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF%E5%92%8C%E5%AD%A6%E4%B9%A0%E5%8D%9A%E5%AE%A2/" rel="tag">技术和学习博客</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/02/07/%E5%BC%82%E5%B8%B8%E4%B8%8E%E9%94%99%E8%AF%AF/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          异常与错误
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/02/05/ACM%E6%A8%A1%E5%BC%8F/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">ACM模式</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/PythonNotes/">PythonNotes</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AE%97%E6%B3%95%E9%A2%98/">算法题</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF%E5%92%8C%E5%AD%A6%E4%B9%A0%E5%8D%9A%E5%AE%A2/" rel="tag">技术和学习博客</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/%E6%8A%80%E6%9C%AF%E5%92%8C%E5%AD%A6%E4%B9%A0%E5%8D%9A%E5%AE%A2/" style="font-size: 10px;">技术和学习博客</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/02/10/%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">常用数据结构</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/07/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">面向对象</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/07/%E5%BC%82%E5%B8%B8%E4%B8%8E%E9%94%99%E8%AF%AF/">异常与错误</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/07/%E5%87%BD%E6%95%B0/">函数</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/05/ACM%E6%A8%A1%E5%BC%8F/">ACM模式</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>常用数据结构 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="常用数据结构堆heap值得是小根堆 12345import heapq # 载入heap库array &#x3D; [10, 17, 50, 7, 30, 24, 27, 45, 15, 5, 36, 21]heap &#x3D; []for num in array:    heapq.heappush(heap, num)  使数组转化为堆1heapq.heapify(list)  123heap &#x3D; [1,3,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="常用数据结构">
+<meta property="og:url" content="http://example.com/2023/02/10/%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="常用数据结构堆heap值得是小根堆 12345import heapq # 载入heap库array &#x3D; [10, 17, 50, 7, 30, 24, 27, 45, 15, 5, 36, 21]heap &#x3D; []for num in array:    heapq.heappush(heap, num)  使数组转化为堆1heapq.heapify(list)  123heap &#x3D; [1,3,">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-02-10T09:47:59.000Z">
+<meta property="article:modified_time" content="2023-02-12T11:41:04.506Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="技术和学习博客">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-常用数据结构" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/02/10/%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="article-date">
+  <time class="dt-published" datetime="2023-02-10T09:47:59.000Z" itemprop="datePublished">2023-02-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/PythonNotes/">PythonNotes</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      常用数据结构
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="常用数据结构"><a href="#常用数据结构" class="headerlink" title="常用数据结构"></a>常用数据结构</h1><h2 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h2><p><code>heap</code>值得是小根堆</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> heapq <span class="comment"># 载入heap库</span></span><br><span class="line">array = [<span class="number">10</span>, <span class="number">17</span>, <span class="number">50</span>, <span class="number">7</span>, <span class="number">30</span>, <span class="number">24</span>, <span class="number">27</span>, <span class="number">45</span>, <span class="number">15</span>, <span class="number">5</span>, <span class="number">36</span>, <span class="number">21</span>]</span><br><span class="line">heap = []</span><br><span class="line"><span class="keyword">for</span> num <span class="keyword">in</span> array:</span><br><span class="line">    heapq.heappush(heap, num)</span><br></pre></td></tr></table></figure>
+
+<h3 id="使数组转化为堆"><a href="#使数组转化为堆" class="headerlink" title="使数组转化为堆"></a>使数组转化为堆</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">heapq.heapify(<span class="built_in">list</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">heap = [<span class="number">1</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">9</span>]</span><br><span class="line">heapq.heapify(heap)</span><br><span class="line"><span class="comment"># heap = [1,2,4,3,6,8,9]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="为heap增加元素"><a href="#为heap增加元素" class="headerlink" title="为heap增加元素"></a>为<code>heap</code>增加元素</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">heapq.heqppush(heap.item)</span><br><span class="line">heapq.heappush(heap, <span class="number">2</span>)</span><br><span class="line"><span class="comment"># heap = [1,3,4,2,6,8,9,2]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="删除堆顶-即最小值"><a href="#删除堆顶-即最小值" class="headerlink" title="删除堆顶(即最小值)"></a>删除堆顶(即最小值)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">heapq.heappop(heap)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">heap = [<span class="number">1</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">9</span>]</span><br><span class="line">heapq.heappop(heap)</span><br><span class="line"><span class="comment"># heap = [2, 3, 4, 4, 6, 8, 9]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="删除最小值并添加新值"><a href="#删除最小值并添加新值" class="headerlink" title="删除最小值并添加新值"></a>删除最小值并添加新值</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">heapq.heapreplace(heap, item)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">heap = [<span class="number">1</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">9</span>]</span><br><span class="line">heapq.heapreplace(heap,<span class="number">4</span>)</span><br><span class="line"><span class="comment"># heap = [2, 3, 4, 4, 6, 8, 9] # 删除堆顶后将新元素放到堆顶，然后下沉</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="查堆中最大n个数"><a href="#查堆中最大n个数" class="headerlink" title="查堆中最大n个数"></a>查堆中最大<code>n</code>个数</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">heapq.nlargest(n, heap) <span class="comment">#查询堆中的最小元素</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">heap = [<span class="number">1</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">9</span>]</span><br><span class="line">result = heapq.nlargest(<span class="number">2</span>, heap)</span><br><span class="line"><span class="comment"># result = [9,8]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="查询堆中最小n个数"><a href="#查询堆中最小n个数" class="headerlink" title="查询堆中最小n个数"></a>查询堆中最小<code>n</code>个数</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">heapq.nsmallest(<span class="number">2</span>, heap)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">heap = [<span class="number">1</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">9</span>]</span><br><span class="line">result = heapq.nsmallest(<span class="number">2</span>, heap)</span><br><span class="line"><span class="comment"># result = [1,2]</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="bisect模块"><a href="#bisect模块" class="headerlink" title="bisect模块"></a><code>bisect</code>模块</h2><p>想要使用二分查找，但是懒得写，就用<code>bisect</code>模块。它实现了<code>bisection</code>算法，能够保持序列<code>sequence</code>顺序不变的情况下对其进行<code>二分查找</code>，适用于降低对冗长序列查找的时间成本。</p>
+<p>通过调用内建函数 <code>dir(bisect)</code> 可查看<code> bisect</code> 模块的属性和方法列表。可见，<code>bisect</code> 模块只有 6 个方法，相当简练。再调用 <code>help(bisect)</code> 则可以查看帮助文档。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> bisect</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">dir</span>(bisect)</span><br><span class="line">[<span class="string">&#x27;__builtins__&#x27;</span>, <span class="string">&#x27;__cached__&#x27;</span>, <span class="string">&#x27;__doc__&#x27;</span>, <span class="string">&#x27;__file__&#x27;</span>, <span class="string">&#x27;__loader__&#x27;</span>, <span class="string">&#x27;__name__&#x27;</span>, <span class="string">&#x27;__package__&#x27;</span>, <span class="string">&#x27;__spec__&#x27;</span>, <span class="string">&#x27;bisect&#x27;</span>, <span class="string">&#x27;bisect_left&#x27;</span>, <span class="string">&#x27;bisect_right&#x27;</span>, <span class="string">&#x27;insort&#x27;</span>, <span class="string">&#x27;insort_left&#x27;</span>, <span class="string">&#x27;insort_right&#x27;</span>]</span><br></pre></td></tr></table></figure>
+
+<p><code>bisect_left()</code>	查找目标元素左侧插入点<br><code>bisect_right()</code>	查找目标元素右侧插入点<br><code>bisect()</code>	同 <code>bisect_right()</code><br><code>insort_left()</code>	查找目标元素左侧插入点，并保序地 插入 元素<br><code>insort_right()</code>	查找目标元素右侧插入点，并保序地 插入 元素<br><code>insort()</code>	同 <code>insort_right()</code></p>
+<p>使用 <code>bisect</code> 模块的方法之前，须确保待操作对象是 <strong>有序序列</strong>，即元素已按 <strong>从大到小 &#x2F; 从小到大</strong> 的顺序排列。</p>
+<h3 id="bisect-left"><a href="#bisect-left" class="headerlink" title="bisect_left()"></a><code>bisect_left()</code></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bisect.bisect_left(a,x,[lo=<span class="number">0</span>, hi=<span class="built_in">len</span>(a)])</span><br></pre></td></tr></table></figure>
+
+<p>在序列 <code>a</code> 中二分查找适合元素 <code>x</code> 插入的位置，保证 <code>a</code> 仍为 有序序列。</p>
+<p>若序列 <code>a</code> 中存在与 <code>x</code> 相同的元素，则返回与 <code>x</code> 相同的第一个 (最左侧) 元素的位置索引，使得 <code>x</code> 若插入后能位于其 左侧；</p>
+<p>若序列 <code>a</code> 中不存在与 <code>x</code> 相同的元素，则返回与 <code>x</code> 右侧距离最近的元素位置索引，使得 <code>x</code> 若插入后能位于其 左侧。</p>
+<p>而 <code>lo</code> 和 <code>hi</code> 为可选参数，分别定义查找范围&#x2F;返回索引的 上限和下限，缺省时默认对 整个 序列查找。</p>
+<p>因此，返回的位置索引 又称为 “插入点”，将其设为 <code>i</code>，则序列 <code>a</code> 可以被划分为两部分，切片表示左侧 <code>a[lo, i)</code> 和右侧 <code>a[i, hi]</code> 。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 测试序列 a1 </span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a1 = [<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]  <span class="comment"># 元素从小到大排列, 无重复, 等距</span></span><br><span class="line"> </span><br><span class="line"><span class="comment"># lo 和 hi 缺省时默认查找整个序列</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>bisect.bisect_left(a1, <span class="number">4</span>)    <span class="comment"># 与 x=4 右侧最近的元素是 5, 其位置 index=0 (若插入, list 变为 [4, 5, 6, 7, 8, 9])</span></span><br><span class="line"><span class="number">0</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>bisect.bisect_left(a1, <span class="number">4.5</span>)  <span class="comment"># 与 x=4.5 右侧最近的元素是 5, 其位置 index=0 (若插入, list 变为 [4.5, 5, 6, 7, 8, 9])</span></span><br><span class="line"><span class="number">0</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>bisect.bisect_left(a1, <span class="number">5</span>)    <span class="comment"># x=5 的位置 index=0 (若插入, list 变为 [5, 5, 6, 7, 8, 9])</span></span><br><span class="line"><span class="number">0</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>bisect.bisect_left(a1, <span class="number">5.5</span>)  <span class="comment"># 与 x=5.5 右侧最近的元素是 6, 其位置 index=1 (若插入, list 变为 [5, 5.5, 6, 7, 8, 9])</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>bisect.bisect_left(a1, <span class="number">6</span>)    <span class="comment"># x=6 的位置 index=1 (若插入, list 变为 [5, 6, 6, 7, 8, 9])</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>bisect.bisect_left(a1, <span class="number">6.5</span>)  <span class="comment"># 与 x=6.5 右侧最近的元素是 7, 其位置 index=2 (若插入, list 变为 [5, 6, 6.5, 7, 8, 9])</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>bisect.bisect_left(a1, <span class="number">7</span>)    <span class="comment"># x=7 的位置 index=2 (若插入, list 变为 [5, 6, 7, 7, 8, 9])</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>bisect.bisect_left(a1, <span class="number">7.5</span>)  <span class="comment"># 与 x=7.5 右侧最近的元素是 8, 其位置 index=3 (若插入, list 变为 [5, 6, 7, 7.5, 8, 9])</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>bisect.bisect_left(a1, <span class="number">8</span>)    <span class="comment"># x=8 的位置 index=3 (若插入, list 变为 [5, 6, 7, 8, 8, 9])</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>bisect.bisect_left(a1, <span class="number">8.5</span>)  <span class="comment"># 与 x=8.5 右侧最近的元素是 9, 其位置 index=4 (若插入, list 变为 [5, 6, 7, 8, 8.5, 9])</span></span><br><span class="line"><span class="number">4</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>bisect.bisect_left(a1, <span class="number">9</span>)    <span class="comment"># x=9 的位置 index=4 (若插入, list 变为 [5, 6, 7, 8, 9, 9])</span></span><br><span class="line"><span class="number">4</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>bisect.bisect_left(a1, <span class="number">9.5</span>)  <span class="comment"># 默认上限 hi=5 (若插入, list 变为 [5, 6, 7, 8, 9, 9.5])</span></span><br><span class="line"><span class="number">5</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>bisect.bisect_left(a1, <span class="number">10</span>)   <span class="comment"># 默认上限 hi=5 (若插入, list 变为 [5, 6, 7, 8, 9, 10])</span></span><br><span class="line"><span class="number">5</span></span><br></pre></td></tr></table></figure>
+
+<p>以上是理想情况，若不是理想情况:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 测试序列 a2</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a2 = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">7</span>]  <span class="comment"># 元素从小到大排列，有重复, 不等距</span></span><br><span class="line"> </span><br><span class="line"><span class="comment"># lo 和 hi 缺省时默认查找整个序列</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>bisect.bisect_left(a2, <span class="number">0</span>)    <span class="comment"># 与 x=0 右侧最近的元素是 1, 其位置 index=0</span></span><br><span class="line"><span class="number">0</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>bisect.bisect_left(a2, <span class="number">0.5</span>)  <span class="comment"># 与 x=0.5 右侧最近的元素是 1, 其位置 index=0</span></span><br><span class="line"><span class="number">0</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>bisect.bisect_left(a2, <span class="number">1</span>)    <span class="comment"># x=1 的位置 index=0</span></span><br><span class="line"><span class="number">0</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>bisect.bisect_left(a2, <span class="number">1.5</span>)  <span class="comment"># 与 x=1.5 右侧最近的元素是 3, 其位置 index=1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>bisect.bisect_left(a2, <span class="number">2</span>)    <span class="comment"># 与 x=2 右侧最近的元素是 3, 其位置 index=1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>bisect.bisect_left(a2, <span class="number">2.5</span>)  <span class="comment"># 与 x=2.5 右侧最近的元素是 3, 其位置 index=1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>bisect.bisect_left(a2, <span class="number">3</span>)    <span class="comment"># 第一个(最左侧) x=3 的位置 index=1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>bisect.bisect_left(a2, <span class="number">3.5</span>)  <span class="comment"># 与 x=3.5 右侧最近的元素是 4, 其位置 index=3 </span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>bisect.bisect_left(a2, <span class="number">4</span>)    <span class="comment"># x=4 的位置 index=3</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>bisect.bisect_left(a2, <span class="number">4.5</span>)  <span class="comment"># 与 x=4 右侧最近的元素是 7, 其位置 index=4 </span></span><br><span class="line"><span class="number">4</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>bisect.bisect_left(a2, <span class="number">5</span>)    <span class="comment"># 与 x=5 右侧最近的元素是 7, 其位置 index=4 </span></span><br><span class="line"><span class="number">4</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>bisect.bisect_left(a2, <span class="number">5.5</span>)  <span class="comment"># 与 x=5.5 右侧最近的元素是 7, 其位置 index=4 </span></span><br><span class="line"><span class="number">4</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>bisect.bisect_left(a2, <span class="number">6</span>)    <span class="comment"># 与 x=6 右侧最近的元素是 7, 其位置 index=4 </span></span><br><span class="line"><span class="number">4</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>bisect.bisect_left(a2, <span class="number">6.5</span>)  <span class="comment"># 与 x=6.5 右侧最近的元素是 7, 其位置 index=4 </span></span><br><span class="line"><span class="number">4</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>bisect.bisect_left(a2, <span class="number">7</span>)    <span class="comment"># x=7 的位置 index=3</span></span><br><span class="line"><span class="number">4</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>bisect.bisect_left(a2, <span class="number">7.5</span>)  <span class="comment"># 默认上限 hi=5 </span></span><br><span class="line"><span class="number">5</span></span><br></pre></td></tr></table></figure>
+
+<p>若再限制一下查找位置&#x2F;上下限</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 测试序列 a2</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a2 = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">7</span>]  <span class="comment"># 元素从小到大排列，有重复, 不等距</span></span><br><span class="line"> </span><br><span class="line"><span class="comment"># 限定查找范围：[lo=1, hi=3] </span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>bisect.bisect_left(a2, <span class="number">0</span>, <span class="number">1</span>, <span class="number">3</span>)  <span class="comment"># 与 x=0 右侧最近的元素是 1, 其位置 index=0, 但下限 lo=1, 故只能返回位置 index=1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>bisect.bisect_left(a2, <span class="number">1</span>, <span class="number">1</span>, <span class="number">3</span>)  <span class="comment"># x=1 的位置 index=0, 但下限 lo=1, 故只能返回位置 index=1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>bisect.bisect_left(a2, <span class="number">2</span>, <span class="number">1</span>, <span class="number">3</span>)  <span class="comment"># 与 x=2 右侧最近的元素是 3, 其位置 index=1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>bisect.bisect_left(a2, <span class="number">3</span>, <span class="number">1</span>, <span class="number">3</span>)  <span class="comment"># 第一个(最左侧) x=3 的位置 index=1 </span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>bisect.bisect_left(a2, <span class="number">4</span>, <span class="number">1</span>, <span class="number">3</span>)  <span class="comment"># x=4 的位置 index=3</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>bisect.bisect_left(a2, <span class="number">5</span>, <span class="number">1</span>, <span class="number">3</span>)  <span class="comment"># 与 x=5 右侧最近的元素是 7, 其位置 index=4, 但上限 hi=3, 故只能返回位置 index=3 </span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>bisect.bisect_left(a2, <span class="number">6</span>, <span class="number">1</span>, <span class="number">3</span>)  <span class="comment"># 与 x=6 右侧最近的元素是 7, 其位置 index=4, 但上限 hi=3, 故只能返回位置 index=3 </span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>bisect.bisect_left(a2, <span class="number">7</span>, <span class="number">1</span>, <span class="number">3</span>)  <span class="comment"># x=7 的位置 index=4, 但上限 hi=3, 故只能返回位置 index=3 </span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>bisect.bisect_left(a2, <span class="number">8</span>, <span class="number">1</span>, <span class="number">3</span>)  <span class="comment"># 上限 hi=3</span></span><br><span class="line"><span class="number">3</span></span><br></pre></td></tr></table></figure>
+
+<p><code>python</code>常用的<code>sequence</code>除了<code>list</code>之外还有<code>tuple</code>和<code>string</code>,下面展示<code>string</code>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 测试序列 a3</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a3 = <span class="string">&#x27;acegi&#x27;</span>  <span class="comment"># 元素从小到大排列，不重复, 等距 </span></span><br><span class="line">                  <span class="comment"># 注意, 表明上看是按字母顺序, 实质上是按 ASCII 码顺序, 如 ord(&#x27;a&#x27;)=97, ord(&#x27;b&#x27;)=98 ...</span></span><br><span class="line"> </span><br><span class="line"><span class="comment"># lo 和 hi 缺省时默认查找整个序列 </span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>bisect.bisect_left(a3, <span class="string">&#x27;a&#x27;</span>)  </span><br><span class="line"><span class="number">0</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>bisect.bisect_left(a3, <span class="string">&#x27;b&#x27;</span>)</span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>bisect.bisect_left(a3, <span class="string">&#x27;c&#x27;</span>)</span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>bisect.bisect_left(a3, <span class="string">&#x27;d&#x27;</span>)</span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>bisect.bisect_left(a3, <span class="string">&#x27;e&#x27;</span>)</span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>bisect.bisect_left(a3, <span class="string">&#x27;f&#x27;</span>)</span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>bisect.bisect_left(a3, <span class="string">&#x27;g&#x27;</span>)</span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>bisect.bisect_left(a3, <span class="string">&#x27;h&#x27;</span>)</span><br><span class="line"><span class="number">4</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>bisect.bisect_left(a3, <span class="string">&#x27;i&#x27;</span>)</span><br><span class="line"><span class="number">4</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>bisect.bisect_left(a3, <span class="string">&#x27;j&#x27;</span>)</span><br><span class="line"><span class="number">5</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="bisect-right"><a href="#bisect-right" class="headerlink" title="bisect_right()"></a><code>bisect_right()</code></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bisect.bisect_right(a, x, [lo=<span class="number">0</span>, hi=<span class="built_in">len</span>(a)])</span><br></pre></td></tr></table></figure>
+
+<p>在序列 <code>a</code> 中二分查找适合元素 <code>x</code> 插入的位置，保证 <code>a</code> 仍为 有序序列。</p>
+<p>若序列 <code>a</code> 中存在与 <code>x</code> 相同的元素，则返回与 <code>x</code> 相同的最后一个(最右侧)元素的位置索引，使得 <code>x</code> 若插入后能位于其 右侧；</p>
+<p>若序列 <code>a</code> 中不存在与 <code>x</code> 相同的元素，则返回与 <code>x</code> 左侧距离最近的元素位置索引，使得 <code>x</code> 若插入后能位于其 右侧。</p>
+<p>而 <code>lo</code> 和 <code>hi</code> 为可选参数，分别定义查找范围&#x2F;返回索引的 上限和下限，缺省时默认对 整个 序列查找。</p>
+<p>已知返回的位置索引为插入点 <code>i</code>，可将序列 <code>a</code> 划分为两部分：左侧 <code>a[lo, i]</code> 和右侧 <code>a(i, hi]</code> 。</p>
+<h3 id="bisect-bisect"><a href="#bisect-bisect" class="headerlink" title="bisect.bisect()"></a><code>bisect.bisect()</code></h3><p>同<code>bisect_right()</code></p>
+<h3 id="bisect-insort-left"><a href="#bisect-insort-left" class="headerlink" title="bisect.insort_left()"></a><code>bisect.insort_left()</code></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bisect.insort_left(a, x, lo=<span class="number">0</span>, hi=<span class="built_in">len</span>(a))</span><br></pre></td></tr></table></figure>
+
+<p>如果说 <code>bisect.bisect_left()</code> 是为了在序列 a 中 <strong>查找</strong> 元素 <code>x</code> 的插入点 (左侧)，那么 <code>bisect.insort_left()</code> 就是在找到插入点的基础上，**真正地将元素 x 插入序列 **，从而改变序列 <code>a</code> 同时保持元素顺序。例如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a11 = [<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>bisect.insort_left(a11, <span class="number">4.5</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a11</span><br><span class="line">[<span class="number">4.5</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a12 = [<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>bisect.insort_left(a12, <span class="number">5.5</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a12</span><br><span class="line">[<span class="number">5</span>, <span class="number">5.5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a13 = [<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>bisect.insort_left(a13, <span class="number">6.5</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a13</span><br><span class="line">[<span class="number">5</span>, <span class="number">6</span>, <span class="number">6.5</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a14 = [<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>bisect.insort_left(a14, <span class="number">7.5</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a14</span><br><span class="line">[<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">7.5</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a15 = [<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>bisect.insort_left(a15, <span class="number">8.5</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a15</span><br><span class="line">[<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">8.5</span>, <span class="number">9</span>]</span><br><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a16 = [<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>bisect.insort_left(a16, <span class="number">9.5</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a16</span><br><span class="line">[<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">9.5</span>]</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="bisect-insort-right"><a href="#bisect-insort-right" class="headerlink" title="bisect.insort_right()"></a><code>bisect.insort_right()</code></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bisect.insort_right(a, x, lo=<span class="number">0</span>, hi=<span class="built_in">len</span>(a))</span><br></pre></td></tr></table></figure>
+
+<p>如果说 <code>bisect.bisect_right()</code> 是为了在序列 <code>a</code> 中 <strong>查找</strong>元素 <code>x</code> 的插入点 (右侧)，那么 <code>bisect.insort_right()</code> 就是在找到插入点的基础上，<strong>真正地将元素 <code>x</code> 插入序列</strong>，从而改变序列 <code>a</code> 同时保持元素顺序。例如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a11 = [<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>bisect.insort_right(a11, <span class="number">4.5</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a11</span><br><span class="line">[<span class="number">4.5</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a12 = [<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>bisect.insort_right(a12, <span class="number">5.5</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a12</span><br><span class="line">[<span class="number">5</span>, <span class="number">5.5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a13 = [<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>bisect.insort_right(a13, <span class="number">6.5</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a13</span><br><span class="line">[<span class="number">5</span>, <span class="number">6</span>, <span class="number">6.5</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a14 = [<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>bisect.insort_right(a14, <span class="number">7.5</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a14</span><br><span class="line">[<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">7.5</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a15 = [<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>bisect.insort_right(a15, <span class="number">8.5</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a15</span><br><span class="line">[<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">8.5</span>, <span class="number">9</span>]</span><br><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a16 = [<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>bisect.insort_right(a16, <span class="number">9.5</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a16</span><br><span class="line">[<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">9.5</span>]</span><br></pre></td></tr></table></figure>
+
+<h3 id="bisect-insort"><a href="#bisect-insort" class="headerlink" title="bisect.insort()"></a><code>bisect.insort()</code></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bisect.insort(a, x, lo=<span class="number">0</span>, hi=<span class="built_in">len</span>(a))</span><br></pre></td></tr></table></figure>
+
+<p>同<code>bisect.insort_right()</code></p>
+<h2 id="SortedList"><a href="#SortedList" class="headerlink" title="SortedList"></a><code>SortedList</code></h2><p>来自于<code>Python</code>中一个专门提供排序的库<code>sortedcontainers</code>。该库提供了三个有用的类: <code>SortedList</code>，<code>SortedDict</code>, <code>SortedSet</code>。</p>
+<p>可以通过以下方式声明一个<code>SortedList</code>对象，输出时发现里面的值已经排好序了。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sortedcontainers <span class="keyword">import</span> SortedList</span><br><span class="line"></span><br><span class="line">test_sl = SortedList([<span class="number">3</span>,<span class="number">5</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">7</span>,<span class="number">6</span>,<span class="number">4</span>])</span><br><span class="line"><span class="built_in">print</span>(test_sl)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>结果为</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SortedList([1, 2, 3, 4, 5, 6, 7])</span><br></pre></td></tr></table></figure>
+
+<p>以下是一些常见操作:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">test_sl.add(<span class="number">2</span>)<span class="comment"># 添加元素</span></span><br><span class="line"></span><br><span class="line">test_sl.remove(<span class="number">4</span>) <span class="comment"># 删除元素，元素不存在时会报错</span></span><br><span class="line">test_sl.discard(<span class="number">1</span>) <span class="comment"># 删除元素，元素不存在时不会报错</span></span><br><span class="line"><span class="built_in">print</span>(test_sl)</span><br><span class="line"></span><br><span class="line">test_sl.pop() <span class="comment"># 移除最后一个元素</span></span><br><span class="line"><span class="built_in">print</span>(test_sl)</span><br><span class="line"></span><br><span class="line">pos_left = test_sl.bisect_left(<span class="number">2</span>) <span class="comment"># 查找元素存在的位置</span></span><br><span class="line">pos_right = test_sl.bisect_left(<span class="number">2</span>) </span><br><span class="line"><span class="built_in">print</span>(pos_left, pos_right)</span><br><span class="line"></span><br><span class="line">num = test_sl.count(<span class="number">2</span>) <span class="comment"># 计数</span></span><br><span class="line"><span class="built_in">print</span>(num)</span><br><span class="line"></span><br><span class="line">ind = test_sl.index <span class="comment"># 返回第一次出现的下标</span></span><br><span class="line"><span class="built_in">print</span>(ind)</span><br></pre></td></tr></table></figure>
+
+<p> <code>SortedList</code>的排序方法是系统默认的， 我们也可以设置排序方法，比如数值从大到小排序</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sortedcontainers <span class="keyword">import</span> SortedList</span><br><span class="line"><span class="keyword">from</span> operator <span class="keyword">import</span> neg</span><br><span class="line"></span><br><span class="line">test_sl = SortedList([<span class="number">3</span>,<span class="number">5</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">7</span>,<span class="number">6</span>,<span class="number">4</span>], key=neg)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(test_sl)</span><br><span class="line"></span><br><span class="line">output:</span><br><span class="line">SortedKeyList([<span class="number">7</span>, <span class="number">6</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">1</span>], key=&lt;built-<span class="keyword">in</span> function neg&gt;)</span><br></pre></td></tr></table></figure>
+
+<p>按字符串长度排序:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sortedcontainers <span class="keyword">import</span> SortedList</span><br><span class="line"></span><br><span class="line">test_str = SortedList([<span class="string">&quot;1&quot;</span>, <span class="string">&quot;431&quot;</span>, <span class="string">&quot;34&quot;</span>], key = <span class="keyword">lambda</span> item: <span class="built_in">len</span>(item))</span><br><span class="line"><span class="built_in">print</span>(test_str)</span><br><span class="line"></span><br><span class="line">output:</span><br><span class="line">SortedKeyList([<span class="string">&#x27;1&#x27;</span>, <span class="string">&#x27;34&#x27;</span>, <span class="string">&#x27;431&#x27;</span>], key=&lt;function &lt;<span class="keyword">lambda</span>&gt; at <span class="number">0x7fb883b36820</span>&gt;)</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/10/%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" data-id="cle1bhele00099ove9kyzd0bg" data-title="常用数据结构" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF%E5%92%8C%E5%AD%A6%E4%B9%A0%E5%8D%9A%E5%AE%A2/" rel="tag">技术和学习博客</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2023/02/07/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">面向对象</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/PythonNotes/">PythonNotes</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AE%97%E6%B3%95%E9%A2%98/">算法题</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF%E5%92%8C%E5%AD%A6%E4%B9%A0%E5%8D%9A%E5%AE%A2/" rel="tag">技术和学习博客</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/%E6%8A%80%E6%9C%AF%E5%92%8C%E5%AD%A6%E4%B9%A0%E5%8D%9A%E5%AE%A2/" style="font-size: 10px;">技术和学习博客</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/02/10/%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">常用数据结构</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/07/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">面向对象</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/07/%E5%BC%82%E5%B8%B8%E4%B8%8E%E9%94%99%E8%AF%AF/">异常与错误</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/07/%E5%87%BD%E6%95%B0/">函数</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/05/ACM%E6%A8%A1%E5%BC%8F/">ACM模式</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
