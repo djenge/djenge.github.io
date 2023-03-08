@@ -71,6 +71,82 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-异常与错误" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/02/07/%E5%BC%82%E5%B8%B8%E4%B8%8E%E9%94%99%E8%AF%AF/" class="article-date">
+  <time class="dt-published" datetime="2023-02-07T07:19:12.000Z" itemprop="datePublished">2023-02-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/PythonNotes/">PythonNotes</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/02/07/%E5%BC%82%E5%B8%B8%E4%B8%8E%E9%94%99%E8%AF%AF/">异常与错误</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Python3-错误和异常"><a href="#Python3-错误和异常" class="headerlink" title="Python3 错误和异常"></a><code>Python3</code> 错误和异常</h1><p>异常与错误不一样。即使<code>Python</code>程序的语法是正确的，在运行它的时候也有可能发生错误。运行期检测到的错误被称为异常。大多数的异常都不会被程序处理，都以错误信息的形式展现在这里</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">10</span> * (<span class="number">1</span>/<span class="number">0</span>)             <span class="comment"># 0 不能作为除数，触发异常</span></span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">&quot;&lt;stdin&gt;&quot;</span>, line <span class="number">1</span>, <span class="keyword">in</span> ?</span><br><span class="line">ZeroDivisionError: division by zero</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">4</span> + spam*<span class="number">3</span>             <span class="comment"># spam 未定义，触发异常</span></span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">&quot;&lt;stdin&gt;&quot;</span>, line <span class="number">1</span>, <span class="keyword">in</span> ?</span><br><span class="line">NameError: name <span class="string">&#x27;spam&#x27;</span> <span class="keyword">is</span> <span class="keyword">not</span> defined</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&#x27;2&#x27;</span> + <span class="number">2</span>               <span class="comment"># int 不能与 str 相加，触发异常</span></span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">&quot;&lt;stdin&gt;&quot;</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">TypeError: can only concatenate <span class="built_in">str</span> (<span class="keyword">not</span> <span class="string">&quot;int&quot;</span>) to <span class="built_in">str</span></span><br></pre></td></tr></table></figure>
+
+<p>异常以不同的类型出现，这些类型都作为信息的一部分打印出来: 例子中的类型有 <code>ZeroDivisionError</code>，<code>NameError</code> 和 <code>TypeError</code>。</p>
+<p>错误信息的前面部分显示了异常发生的上下文，并以调用栈的形式显示具体信息。</p>
+<h2 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h2><h3 id="try-except"><a href="#try-except" class="headerlink" title="try/except"></a><code>try/except</code></h3><p>以下例子中，让用户输入一个合法的整数，但是允许用户中断这个程序（使用 <code>Control-C</code> 或者操作系统提供的方法）。用户中断的信息会引发一个 <code>KeyboardInterrupt</code> 异常。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        x = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;请输入一个数字: &quot;</span>))</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">except</span> ValueError:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;您输入的不是数字，请再次尝试输入！&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p><code>try</code>按以下方式工作:</p>
+<p>首先，执行<code>try</code>子句(在关键字<code>try</code>和关键字<code>except</code>之间的语句)。如果没有异常发生，忽略<code>except</code>子句，<code>try</code>子句执行后结束。如果在执行 <code>try</code> 子句的过程中发生了异常，那么<code> try</code> 子句余下的部分将被忽略。如果异常的类型和<code> except</code> 之后的名称相符，那么对应的 <code>except</code> 子句将被执行。如果一个异常没有与任何的 <code>except</code> 匹配，那么这个异常将会传递给上层的<code> try</code> 中。</p>
+<p>一个<code> try</code> 语句可能包含多个<code>except</code>子句，分别来处理不同的特定的异常。最多只有一个分支会被执行。</p>
+<p>处理程序将只针对对应的<code> try</code> 子句中的异常进行处理，而不是其他的 <code>try</code> 的处理程序中的异常。</p>
+<p>一个<code>except</code>子句可以同时处理多个异常，这些异常将被放在一个括号里成为一个元组，例如:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">except</span>(RuntimeError, TypeError, NameError):</span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+
+<p>最后一个<code>except</code>子句可以忽略异常的名称，它将被当作通配符使用。你可以使用这种方法打印一个错误信息，然后再次把异常抛出。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    f = <span class="built_in">open</span>(<span class="string">&#x27;myfile.txt&#x27;</span>)</span><br><span class="line">    s = f.readline()</span><br><span class="line">    i = <span class="built_in">int</span>(s.strip())</span><br><span class="line"><span class="keyword">except</span> OSError <span class="keyword">as</span> err:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;OS error: &#123;0&#125;&quot;</span>.<span class="built_in">format</span>(err))</span><br><span class="line"><span class="keyword">except</span> ValueError:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Could not convert data to an integer.&quot;</span>)</span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Unexpected error:&quot;</span>, sys.exc_info()[<span class="number">0</span>])</span><br><span class="line">    <span class="keyword">raise</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="try-except-else"><a href="#try-except-else" class="headerlink" title="try/except...else"></a><code>try/except...else</code></h3><p><code>try/except</code> 语句还有一个可选的 <code>else</code> 子句，如果使用这个子句，那么必须放在所有的 <code>except</code> 子句之后。</p>
+<p><code>else</code> 子句将在 <code>try</code> 子句没有发生任何异常的时候执行。</p>
+<p>以下实例在 <code>try</code> 语句中判断文件是否可以打开，如果打开文件时正常的没有发生异常则执行 <code>else</code> 部分的语句，读取文件内容：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> arg <span class="keyword">in</span> sys.argv[<span class="number">1</span>:]:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        f = <span class="built_in">open</span>(arg, <span class="string">&#x27;r&#x27;</span>)</span><br><span class="line">    <span class="keyword">except</span> IOError:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;cannot open&#x27;</span>, arg)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(arg, <span class="string">&#x27;has&#x27;</span>, <span class="built_in">len</span>(f.readlines()), <span class="string">&#x27;lines&#x27;</span>)</span><br><span class="line">        f.close()</span><br></pre></td></tr></table></figure>
+
+<p>使用 <code>else</code> 子句比把所有的语句都放在 try 子句里面要好，这样可以避免一些意想不到，而 <code>except</code> 又无法捕获的异常。</p>
+<p>异常处理并不仅仅处理那些直接发生在 <code>try</code> 子句中的异常，而且还能处理子句中调用的函数（甚至间接调用的函数）里抛出的异常。例如:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">def</span> <span class="title function_">this_fails</span>():</span><br><span class="line">        x = <span class="number">1</span>/<span class="number">0</span></span><br><span class="line">   </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">try</span>:</span><br><span class="line">        this_fails()</span><br><span class="line">    <span class="keyword">except</span> ZeroDivisionError <span class="keyword">as</span> err:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;Handling run-time error:&#x27;</span>, err)</span><br><span class="line">   </span><br><span class="line">Handling run-time error: <span class="built_in">int</span> division <span class="keyword">or</span> modulo by zero</span><br></pre></td></tr></table></figure>
+
+<h3 id="用户自定义异常"><a href="#用户自定义异常" class="headerlink" title="用户自定义异常"></a>用户自定义异常</h3><p>可以通过创建一个新的异常类来拥有自己的异常。异常类继承自 <code>Exception</code> 类，可以直接继承，或者间接继承，例如:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">class</span> <span class="title class_">MyError</span>(<span class="title class_ inherited__">Exception</span>):</span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, value</span>):</span><br><span class="line">            self.value = value</span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">__str__</span>(<span class="params">self</span>):</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">repr</span>(self.value)</span><br><span class="line">   </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">raise</span> MyError(<span class="number">2</span>*<span class="number">2</span>)</span><br><span class="line">    <span class="keyword">except</span> MyError <span class="keyword">as</span> e:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;My exception occurred, value:&#x27;</span>, e.value)</span><br><span class="line">   </span><br><span class="line">My exception occurred, value: <span class="number">4</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">raise</span> MyError(<span class="string">&#x27;oops!&#x27;</span>)</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">&quot;&lt;stdin&gt;&quot;</span>, line <span class="number">1</span>, <span class="keyword">in</span> ?</span><br><span class="line">__main__.MyError: <span class="string">&#x27;oops!&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中，类 <code>Exception</code> 默认的 <code>__init__()</code> 被覆盖。</p>
+<p>当创建一个模块有可能抛出多种不同的异常时，一种通常的做法是为这个包建立一个基础异常类，然后基于这个基础类为不同的错误情况创建不同的子类:</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/07/%E5%BC%82%E5%B8%B8%E4%B8%8E%E9%94%99%E8%AF%AF/" data-id="cle1bhel500039oveebnaeyro" data-title="异常与错误" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF%E5%92%8C%E5%AD%A6%E4%B9%A0%E5%8D%9A%E5%AE%A2/" rel="tag">技术和学习博客</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-函数" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2023/02/07/%E5%87%BD%E6%95%B0/" class="article-date">
@@ -938,167 +1014,6 @@
 
 
   
-    <article id="post-模块" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/01/30/%E6%A8%A1%E5%9D%97/" class="article-date">
-  <time class="dt-published" datetime="2023-01-30T04:24:26.000Z" itemprop="datePublished">2023-01-30</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/PythonNotes/">PythonNotes</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/01/30/%E6%A8%A1%E5%9D%97/">模块</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="模块-包"><a href="#模块-包" class="headerlink" title="模块, 包"></a>模块, 包</h1><p>一个模块就是一个文件。</p>
-<h2 id="import语句"><a href="#import语句" class="headerlink" title="import语句"></a><code>import</code>语句</h2><p>当解释器遇到<code>import</code>语句，如果模块在当前的搜索路径就会被导入。搜索路径是一个列表。如果解释器会先进行搜索所有目录的列表。</p>
-<p>一个模块只会被导入一次，不管执行了多少次<code>import</code>。这样可以防止导入模块被一遍又一遍地执行。</p>
-<p>搜索路径是由一系列目录名组成的。<code>python</code>解释器依次从这些目录中去寻找所引入的模块。搜索路径很像环境变量，实际上也可以通过被定义环境变量的方式来确定搜索路径。搜索路径是在<code>Python</code>编译或者安装的时候确定的，安装新的库也会对其进行相应的修改。搜索路径存储在<code>sys</code>模块中的<code>path</code>变量。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> sys</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>sys.path</span><br><span class="line">[<span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;C:\\Python310\\python310.zip&#x27;</span>, <span class="string">&#x27;C:\\Python310\\DLLs&#x27;</span>, <span class="string">&#x27;C:\\Python310\\lib&#x27;</span>, <span class="string">&#x27;C:\\Python310&#x27;</span>, <span class="string">&#x27;C:\\Python310\\lib\\site-packages&#x27;</span>]</span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure>
-
-<p>第一项是一个空串，代表当前目录。</p>
-<p>如果在当前目录下存在与要引入模块同名的文件，就会把要引入的模块屏蔽掉。</p>
-<p>可以在脚本中修改<code>sys.path</code>来引入一些不在搜索路径中的模块。</p>
-<p>在当前目录下写一个<code>fibo.py</code>文件</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 斐波那契(fibonacci)数列模块</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fib</span>(<span class="params">n</span>):    <span class="comment"># 定义到 n 的斐波那契数列</span></span><br><span class="line">    a, b = <span class="number">0</span>, <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> b &lt; n:</span><br><span class="line">        <span class="built_in">print</span>(b, end=<span class="string">&#x27; &#x27;</span>)</span><br><span class="line">        a, b = b, a+b</span><br><span class="line">    <span class="built_in">print</span>()</span><br><span class="line"> </span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fib2</span>(<span class="params">n</span>): <span class="comment"># 返回到 n 的斐波那契数列</span></span><br><span class="line">    result = []</span><br><span class="line">    a, b = <span class="number">0</span>, <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> b &lt; n:</span><br><span class="line">        result.append(b)</span><br><span class="line">        a, b = b, a+b</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>然后在当前目录下打开<code>python</code>解释器。并输入以下命令</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> fibo</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">globals</span>()</span><br><span class="line">&#123;<span class="string">&#x27;__name__&#x27;</span>: <span class="string">&#x27;__main__&#x27;</span>, <span class="string">&#x27;__doc__&#x27;</span>: <span class="literal">None</span>, <span class="string">&#x27;__package__&#x27;</span>: <span class="literal">None</span>, <span class="string">&#x27;__loader__&#x27;</span>: &lt;<span class="keyword">class</span> <span class="string">&#x27;_frozen_importlib.BuiltinImporter&#x27;</span>&gt;, <span class="string">&#x27;__spec__&#x27;</span>: <span class="literal">None</span>, <span class="string">&#x27;__annotations__&#x27;</span>: &#123;&#125;, <span class="string">&#x27;__builtins__&#x27;</span>: &lt;module <span class="string">&#x27;builtins&#x27;</span> (built-<span class="keyword">in</span>)&gt;, <span class="string">&#x27;fibo&#x27;</span>: &lt;module <span class="string">&#x27;fibo&#x27;</span> <span class="keyword">from</span> <span class="string">&#x27;E:\\AI\\CainiaoDemo\\fibo.py&#x27;</span>&gt;&#125;</span><br></pre></td></tr></table></figure>
-
-<p>可以看到，这样做没有把直接定义在<code>fibo</code>模块中的函数名称写入当前符号表里，只是把模块<code>fibo</code>的名字写进去了。</p>
-<p>可以使用模块名称来访问函数:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>fibo.fib(<span class="number">1000</span>)</span><br><span class="line"><span class="number">1</span> <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">5</span> <span class="number">8</span> <span class="number">13</span> <span class="number">21</span> <span class="number">34</span> <span class="number">55</span> <span class="number">89</span> <span class="number">144</span> <span class="number">233</span> <span class="number">377</span> <span class="number">610</span> <span class="number">987</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fibo.fib2(<span class="number">100</span>)</span><br><span class="line">[<span class="number">1</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">13</span>, <span class="number">21</span>, <span class="number">34</span>, <span class="number">55</span>, <span class="number">89</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fibo.__name__</span><br><span class="line"><span class="string">&#x27;fibo&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">globals</span>()</span><br><span class="line">&#123;<span class="string">&#x27;__name__&#x27;</span>: <span class="string">&#x27;__main__&#x27;</span>, <span class="string">&#x27;__doc__&#x27;</span>: <span class="literal">None</span>, <span class="string">&#x27;__package__&#x27;</span>: <span class="literal">None</span>, <span class="string">&#x27;__loader__&#x27;</span>: &lt;<span class="keyword">class</span> <span class="string">&#x27;_frozen_importlib.BuiltinImporter&#x27;</span>&gt;, <span class="string">&#x27;__spec__&#x27;</span>: <span class="literal">None</span>, <span class="string">&#x27;__annotations__&#x27;</span>: &#123;&#125;, <span class="string">&#x27;__builtins__&#x27;</span>: &lt;module <span class="string">&#x27;builtins&#x27;</span> (built-<span class="keyword">in</span>)&gt;, <span class="string">&#x27;fibo&#x27;</span>: &lt;module <span class="string">&#x27;fibo&#x27;</span> <span class="keyword">from</span> <span class="string">&#x27;E:\\AI\\CainiaoDemo\\fibo.py&#x27;</span>&gt;&#125;&gt;&gt;&gt;</span><br></pre></td></tr></table></figure>
-
-<p>如果打算经常使用一个函数，可以把它赋给一个本地的名称：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>fib=fibo.fib</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fib(<span class="number">500</span>)</span><br><span class="line"><span class="number">1</span> <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">5</span> <span class="number">8</span> <span class="number">13</span> <span class="number">21</span> <span class="number">34</span> <span class="number">55</span> <span class="number">89</span> <span class="number">144</span> <span class="number">233</span> <span class="number">377</span> </span><br></pre></td></tr></table></figure>
-
-<h2 id="from-import语句"><a href="#from-import语句" class="headerlink" title="from...import语句"></a><code>from...import</code>语句</h2><p><code>python</code>的<code>from</code>语句可以让我们从模块中导入一个指定的部分到当前命名空间中。例如, 要导入<code>fibo</code>模块的<code>fib</code>函数，可以使用如下语句:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> fibo <span class="keyword">import</span> fib,fib2</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fib(<span class="number">500</span>)</span><br><span class="line"><span class="number">1</span> <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">5</span> <span class="number">8</span> <span class="number">13</span> <span class="number">21</span> <span class="number">34</span> <span class="number">55</span> <span class="number">89</span> <span class="number">144</span> <span class="number">233</span> <span class="number">377</span> </span><br></pre></td></tr></table></figure>
-
-<p>这个声明不会把整个<code>fibo</code>模块导入到当前命名空间中，只会将<code>fibo</code>里的<code>fib</code>和<code>fib2</code>函数引入进来。</p>
-<h2 id="from-import-语句"><a href="#from-import-语句" class="headerlink" title="from ... import *语句"></a><code>from ... import *</code>语句</h2><p>把一个模块的所有内容导入当前命名空间中，只需使用如下声明</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> modname <span class="keyword">import</span> *</span><br></pre></td></tr></table></figure>
-
-<p>者提供了一个简单的方法来导入一个模块中的所有项目。但是这种声明不应该被过多使用。</p>
-<h2 id="深入模块"><a href="#深入模块" class="headerlink" title="深入模块"></a>深入模块</h2><p>模块除了方法定义，还可以包括可执行代码。这些代码一般用来初始化这个模块。这些代码只有在第一次被导入时才会执行。</p>
-<p>每个模块有各自独立的符号表，在模块内部为所有的函数当作全局符号表来使用。</p>
-<p>所以，模块的作者可以大胆使用模块内部的全局变量。</p>
-<p>模块是可以导入其他模块的。被导入的模块名称将被放入当前操作的模块的符号表中。</p>
-<p>还有一种方法，可以使用<code>import</code></p>
-<p>直接把模块内函数&#x2F;变量的名称导入当前操作模块。比如:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> fibo <span class="keyword">import</span> fib, fib2</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fib(<span class="number">500</span>)</span><br><span class="line"><span class="number">1</span> <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">5</span> <span class="number">8</span> <span class="number">13</span> <span class="number">21</span> <span class="number">34</span> <span class="number">55</span> <span class="number">89</span> <span class="number">144</span> <span class="number">233</span> <span class="number">377</span></span><br></pre></td></tr></table></figure>
-
-<p>这种导入方法不会把被导入的模块的名称放在当前的字符表中，所以在这个例子中，<code>fibo</code>的名称是没有意义的。</p>
-<p>还有一种方法，可以一次性把模块中的所有函数&#x2F;变量名称都导入当前模块的字符表</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> fibo <span class="keyword">import</span> *</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fib(<span class="number">500</span>)</span><br><span class="line"><span class="number">1</span> <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">5</span> <span class="number">8</span> <span class="number">13</span> <span class="number">21</span> <span class="number">34</span> <span class="number">55</span> <span class="number">89</span> <span class="number">144</span> <span class="number">233</span> <span class="number">377</span></span><br></pre></td></tr></table></figure>
-
-<p>这种方法会把所有的名字都导入进来，但由单一下划线(_)开头的名字不在此中。大多数情况， Python程序员不使用这种方法，因为引入的其它来源的命名，很可能覆盖了已有的定义。</p>
-<h2 id="name-属性"><a href="#name-属性" class="headerlink" title="__name__属性"></a><code>__name__</code>属性</h2><p>每个模块都有一个<code>__name__</code>属性。当其值是<code>__main__</code>时，表明该模块自身在运行，否则是被引入。</p>
-<p>一个模块被另一个程序第一次引入时，其主程序将运行。如果我们想在模块被引入时，模块中的某一程序块不执行，我们可以用<code>__name__</code>属性来使该程序块仅在该模块自身运行时执行。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># using_name.py</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;程序自身在运行&#x27;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;我来自另一模块&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<p>运行输出:</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">PS</span> E:\AI\CainiaoDemo&gt; python using_name.py</span><br><span class="line">程序自身在运行</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> using_name</span><br><span class="line">我来自另一模块</span><br></pre></td></tr></table></figure>
-
-<h2 id="dir-函数"><a href="#dir-函数" class="headerlink" title="dir()函数"></a><code>dir()</code>函数</h2><p>内置的函数<code>dir()</code>可以找到模块内定义的所有名称。以一个<code>字符串列表</code>的形式返回</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> fibo,sys</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">dir</span>(fibo)</span><br><span class="line">[<span class="string">&#x27;__builtins__&#x27;</span>, <span class="string">&#x27;__cached__&#x27;</span>, <span class="string">&#x27;__doc__&#x27;</span>, <span class="string">&#x27;__file__&#x27;</span>, <span class="string">&#x27;__loader__&#x27;</span>, <span class="string">&#x27;__name__&#x27;</span>, <span class="string">&#x27;__package__&#x27;</span>, <span class="string">&#x27;__spec__&#x27;</span>, <span class="string">&#x27;fib&#x27;</span>, <span class="string">&#x27;fib2&#x27;</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">dir</span>(sys)</span><br><span class="line">[<span class="string">&#x27;__breakpointhook__&#x27;</span>, <span class="string">&#x27;__displayhook__&#x27;</span>, <span class="string">&#x27;__doc__&#x27;</span>, <span class="string">&#x27;__excepthook__&#x27;</span>, <span class="string">&#x27;__interactivehook__&#x27;</span>, <span class="string">&#x27;__loader__&#x27;</span>, <span class="string">&#x27;__name__&#x27;</span>, <span class="string">&#x27;__package__&#x27;</span>, <span class="string">&#x27;__spec__&#x27;</span>, <span class="string">&#x27;__stderr__&#x27;</span>, <span class="string">&#x27;__stdin__&#x27;</span>, <span class="string">&#x27;__stdout__&#x27;</span>, <span class="string">&#x27;__unraisablehook__&#x27;</span>, <span class="string">&#x27;_base_executable&#x27;</span>, <span class="string">&#x27;_clear_type_cache&#x27;</span>, <span class="string">&#x27;_current_exceptions&#x27;</span>, <span class="string">&#x27;_current_frames&#x27;</span>, <span class="string">&#x27;_deactivate_opcache&#x27;</span>, <span class="string">&#x27;_debugmallocstats&#x27;</span>, <span class="string">&#x27;_enablelegacywindowsfsencoding&#x27;</span>, <span class="string">&#x27;_framework&#x27;</span>, <span class="string">&#x27;_getframe&#x27;</span>, <span class="string">&#x27;_git&#x27;</span>, <span class="string">&#x27;_home&#x27;</span>, <span class="string">&#x27;_xoptions&#x27;</span>, <span class="string">&#x27;addaudithook&#x27;</span>, <span class="string">&#x27;api_version&#x27;</span>, <span class="string">&#x27;argv&#x27;</span>, <span class="string">&#x27;audit&#x27;</span>, <span class="string">&#x27;base_exec_prefix&#x27;</span>, <span class="string">&#x27;base_prefix&#x27;</span>, <span class="string">&#x27;breakpointhook&#x27;</span>, <span class="string">&#x27;builtin_module_names&#x27;</span>, <span class="string">&#x27;byteorder&#x27;</span>, <span class="string">&#x27;call_tracing&#x27;</span>, <span class="string">&#x27;copyright&#x27;</span>, <span class="string">&#x27;displayhook&#x27;</span>, <span class="string">&#x27;dllhandle&#x27;</span>, <span class="string">&#x27;dont_write_bytecode&#x27;</span>, <span class="string">&#x27;exc_info&#x27;</span>, <span class="string">&#x27;excepthook&#x27;</span>, <span class="string">&#x27;exec_prefix&#x27;</span>, <span class="string">&#x27;executable&#x27;</span>, <span class="string">&#x27;exit&#x27;</span>, <span class="string">&#x27;flags&#x27;</span>, <span class="string">&#x27;float_info&#x27;</span>, <span class="string">&#x27;float_repr_style&#x27;</span>, <span class="string">&#x27;get_asyncgen_hooks&#x27;</span>, <span class="string">&#x27;get_coroutine_origin_tracking_depth&#x27;</span>, <span class="string">&#x27;getallocatedblocks&#x27;</span>, <span class="string">&#x27;getdefaultencoding&#x27;</span>, <span class="string">&#x27;getfilesystemencodeerrors&#x27;</span>, <span class="string">&#x27;getfilesystemencoding&#x27;</span>, <span class="string">&#x27;getprofile&#x27;</span>, <span class="string">&#x27;getrecursionlimit&#x27;</span>, <span class="string">&#x27;getrefcount&#x27;</span>, <span class="string">&#x27;getsizeof&#x27;</span>, <span class="string">&#x27;getswitchinterval&#x27;</span>, <span class="string">&#x27;gettrace&#x27;</span>, <span class="string">&#x27;getwindowsversion&#x27;</span>, <span class="string">&#x27;hash_info&#x27;</span>, <span class="string">&#x27;hexversion&#x27;</span>, <span class="string">&#x27;implementation&#x27;</span>, <span class="string">&#x27;int_info&#x27;</span>, <span class="string">&#x27;intern&#x27;</span>, <span class="string">&#x27;is_finalizing&#x27;</span>, <span class="string">&#x27;maxsize&#x27;</span>, <span class="string">&#x27;maxunicode&#x27;</span>, <span class="string">&#x27;meta_path&#x27;</span>, <span class="string">&#x27;modules&#x27;</span>, <span class="string">&#x27;orig_argv&#x27;</span>, <span class="string">&#x27;path&#x27;</span>, <span class="string">&#x27;path_hooks&#x27;</span>, <span class="string">&#x27;path_importer_cache&#x27;</span>, <span class="string">&#x27;platform&#x27;</span>, <span class="string">&#x27;platlibdir&#x27;</span>, <span class="string">&#x27;prefix&#x27;</span>, <span class="string">&#x27;ps1&#x27;</span>, <span class="string">&#x27;ps2&#x27;</span>, <span class="string">&#x27;pycache_prefix&#x27;</span>, <span class="string">&#x27;set_asyncgen_hooks&#x27;</span>, <span class="string">&#x27;set_coroutine_origin_tracking_depth&#x27;</span>, <span class="string">&#x27;setprofile&#x27;</span>, <span class="string">&#x27;setrecursionlimit&#x27;</span>, <span class="string">&#x27;setswitchinterval&#x27;</span>, <span class="string">&#x27;settrace&#x27;</span>, <span class="string">&#x27;stderr&#x27;</span>, <span class="string">&#x27;stdin&#x27;</span>, <span class="string">&#x27;stdlib_module_names&#x27;</span>, <span class="string">&#x27;stdout&#x27;</span>, <span class="string">&#x27;thread_info&#x27;</span>, <span class="string">&#x27;unraisablehook&#x27;</span>, <span class="string">&#x27;version&#x27;</span>, <span class="string">&#x27;version_info&#x27;</span>, <span class="string">&#x27;warnoptions&#x27;</span>, <span class="string">&#x27;winver&#x27;</span>]</span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure>
-
-<p>如果没有给定参数，那么<code>dir()</code>函数会罗列出当前定义的所有名称</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> fibo </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fib = fibo.fib</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">dir</span>() <span class="comment"># 得到一个当前模块中定义的属性列表</span></span><br><span class="line">[<span class="string">&#x27;__annotations__&#x27;</span>, <span class="string">&#x27;__builtins__&#x27;</span>, <span class="string">&#x27;__doc__&#x27;</span>, <span class="string">&#x27;__loader__&#x27;</span>, <span class="string">&#x27;__name__&#x27;</span>, <span class="string">&#x27;__package__&#x27;</span>, <span class="string">&#x27;__spec__&#x27;</span>, <span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;fib&#x27;</span>, <span class="string">&#x27;fibo&#x27;</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = <span class="number">5</span> <span class="comment"># 建立一个新的变量&#x27;a&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">dir</span>()</span><br><span class="line">[<span class="string">&#x27;__annotations__&#x27;</span>, <span class="string">&#x27;__builtins__&#x27;</span>, <span class="string">&#x27;__doc__&#x27;</span>, <span class="string">&#x27;__loader__&#x27;</span>, <span class="string">&#x27;__name__&#x27;</span>, <span class="string">&#x27;__package__&#x27;</span>, <span class="string">&#x27;__spec__&#x27;</span>, <span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;fib&#x27;</span>, <span class="string">&#x27;fibo&#x27;</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">del</span> a <span class="comment"># 删除变量名a</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">dir</span>()</span><br><span class="line">[<span class="string">&#x27;__annotations__&#x27;</span>, <span class="string">&#x27;__builtins__&#x27;</span>, <span class="string">&#x27;__doc__&#x27;</span>, <span class="string">&#x27;__loader__&#x27;</span>, <span class="string">&#x27;__name__&#x27;</span>, <span class="string">&#x27;__package__&#x27;</span>, <span class="string">&#x27;__spec__&#x27;</span>, <span class="string">&#x27;fib&#x27;</span>, <span class="string">&#x27;fibo&#x27;</span>]</span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="标准模块"><a href="#标准模块" class="headerlink" title="标准模块"></a>标准模块</h2><p><code>python</code>本身带着一些标准的模块库。</p>
-<p>有些模块直接被构建在解析器里，这些虽然不是一些语言内置的功能，但是他却能很高效的使用，甚至是系统级调用也没问题。这些组件会根据不同的操作系统进行不同形式的配置，比如<code> winreg</code> 这个模块就只会提供给 <code>Windows</code> 系统。</p>
-<p>应该注意到这有一个特别的模块<code> sys</code> ，它内置在每一个 <code>Python</code> 解析器中。变量 <code>sys.ps1</code> 和 <code>sys.ps2 </code>定义了主提示符和副提示符所对应的字符串:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> sys</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>sys.ps1</span><br><span class="line"><span class="string">&#x27;&gt;&gt;&gt; &#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>sys.ps2</span><br><span class="line"><span class="string">&#x27;... &#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>sys.ps1 = <span class="string">&#x27;C&gt; &#x27;</span></span><br><span class="line">C&gt; <span class="built_in">print</span>(<span class="string">&#x27;Runoob!&#x27;</span>)</span><br><span class="line">Runoob!</span><br><span class="line">C&gt; </span><br></pre></td></tr></table></figure>
-
-<h2 id="包"><a href="#包" class="headerlink" title="包"></a>包</h2><p>包是一种管理<code>Python</code>模块命名空间的形式。采用”点模块名称”。</p>
-<p>比如一个模块的名称是<code>A.B</code>,那么他表示一个包<code>A</code>中的子模块<code>B</code>。</p>
-<p>就好像使用模块的时候，你不用担心不同模块之间的全局变量相互影响一样，采用点模块名称这种形式也不用担心不同库之间的模块重名的情况。</p>
-<p>这样不同的作者都可以提供 <code>NumPy</code> 模块，或者是 <code>Python</code> 图形库。</p>
-<p>不妨假设你想设计一套统一处理声音文件和数据的模块（或者称之为一个”包”）。</p>
-<p>现存很多种不同的音频文件格式（基本上都是通过后缀名区分的，例如： <code>.wav</code>，<code>:file:.aiff</code>，<code>:file:.au</code>，），所以你需要有一组不断增加的模块，用来在不同的格式之间转换。</p>
-<p>并且针对这些音频数据，还有很多不同的操作（比如混音，添加回声，增加均衡器功能，创建人造立体声效果），所以你还需要一组怎么也写不完的模块来处理这些操作。</p>
-<p>这里给出一种可能的包结构</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">sound/                          顶层包</span><br><span class="line">      __init__.py               初始化 sound 包</span><br><span class="line">      formats/                  文件格式转换子包</span><br><span class="line">              __init__.py</span><br><span class="line">              wavread.py</span><br><span class="line">              wavwrite.py</span><br><span class="line">              aiffread.py</span><br><span class="line">              aiffwrite.py</span><br><span class="line">              auread.py</span><br><span class="line">              auwrite.py</span><br><span class="line">              ...</span><br><span class="line">      effects/                  声音效果子包</span><br><span class="line">              __init__.py</span><br><span class="line">              echo.py</span><br><span class="line">              surround.py</span><br><span class="line">              reverse.py</span><br><span class="line">              ...</span><br><span class="line">      filters/                  filters 子包</span><br><span class="line">              __init__.py</span><br><span class="line">              equalizer.py</span><br><span class="line">              vocoder.py</span><br><span class="line">              karaoke.py</span><br><span class="line">              ...</span><br></pre></td></tr></table></figure>
-
-<p>在导入一个包的时候，<code>Python</code>会根据<code>sys.path</code>中的目录来寻找这个包中包含的子目录。</p>
-<p>目录只有包含一个叫做<code>__init__.py</code>的文件才会被认作是一个包，主要是为了避免一些滥俗的名字(比如叫做<code>string</code>)不小心地影响搜索路径中的有效模块。</p>
-<p>最简单的情况，放一个空的<code>:file:__init__.py</code>就可以了。当然这个文件中也可以包含一些初始化代码或者为<code>__all__</code>变量赋值。</p>
-<p>用户可以每次只导入一个包里的特定模块。它必须使用全名去访问:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sound.effects.echo.echofilter(<span class="built_in">input</span>, output, delay=<span class="number">0.7</span>, atten=<span class="number">4</span>)</span><br></pre></td></tr></table></figure>
-
-<p>还有一种导入子模块地方法是:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">from sound.effects import echo</span><br></pre></td></tr></table></figure>
-
-<p>这样也会导入子模块<code>:echo</code>,并且他不需要那些隆昌的前缀，所以他可以这样使用:</p>
-<p><code>echo.echofilter(input, output, delay=0.7, atten=4)</code></p>
-<p>还有一种变化就是直接导入一个函数或者变量</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sound.effects.echo <span class="keyword">import</span> echofilter</span><br></pre></td></tr></table></figure>
-
-<p>同样的 ，这种方法回到如子模块<code>echo</code>,并且可以直接使用他的<code>echofilter()</code>函数</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echofilter(<span class="built_in">input</span>, output, delay=<span class="number">0.7</span>, atten=<span class="number">4</span>)</span><br></pre></td></tr></table></figure>
-
-<p>注意当使用 <code>from package import item</code> 这种形式的时候，对应的 <code>item </code>既可以是包里面的子模块（子包），或者包里面定义的其他名称，比如函数，类或者变量。</p>
-<p><code>import</code> 语法会首先把 <code>item</code> 当作一个包定义的名称，如果没找到，再试图按照一个模块去导入。如果还没找到，抛出一个 <code>:exc:ImportError</code> 异常。</p>
-<p>反之，如果使用形如 <code>import item.subitem.subsubitem</code> 这种导入形式，除了最后一项，都必须是包，而最后一项则可以是模块或者是包，<strong>但是不可以是类，函数或者变量的名字</strong>。</p>
-<h2 id="从一个包中导入"><a href="#从一个包中导入" class="headerlink" title="从一个包中导入*"></a>从一个包中导入<code>*</code></h2><p>如果我们使用 <code>from sound.effects import </code> 会发生什么呢？</p>
-<p><code>Python</code> 会进入文件系统，找到这个包里面所有的子模块，然后一个一个的把它们都导入进来。</p>
-<p>但这个方法在 <code>Windows</code> 平台上工作的就不是非常好，因为 <code>Windows</code> 是一个不区分大小写的系统。</p>
-<p>在<code> Windows</code> 平台上，我们无法确定一个叫做 <code>ECHO.py </code>的文件导入为模块是 <code>echo</code> 还是 <code>Echo</code>，或者是 <code>ECHO</code>。</p>
-<p>为了解决这个问题，我们只需要提供一个精确包的索引。</p>
-<p>导入语句遵循如下规则：如果包定义文件 <code>__init__.py</code> 存在一个叫做 <code>__all__ </code>的<strong>列表变量</strong>，那么在使用<code>from package import</code> 的时候就把这个列表中的所有名字作为包内容导入。</p>
-<p>作为包的作者，可别忘了在更新包之后保证 <code>__all__</code> 也更新了啊。</p>
-<p>以下实例在 <code>file:sounds/effects/__init__.py</code> 中包含如下代码:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">__all__ = [<span class="string">&quot;echo&quot;</span>, <span class="string">&quot;surround&quot;</span>, <span class="string">&quot;reverse&quot;</span>]</span><br></pre></td></tr></table></figure>
-
-<p>这表示当你使用<code>from sound.effects import *</code>这种用法时，你只会导入包里面这三个子模块。</p>
-<p>如果 <code>__all__</code> 真的没有定义，那么使用<code>from sound.effects import </code>这种语法的时候，就不会导入包 <code>sound.effects</code> 里的任何子模块。他只是把包<code>sound.effects</code>和它里面定义的所有内容导入进来（可能运行<code>__init__.py</code>里定义的初始化代码）。</p>
-<p>这会把 <code>__init__.py</code> 里面定义的所有名字导入进来。并且他不会破坏掉我们在这句话之前导入的所有明确指定的模块。看下这部分代码:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sound.effects.echo</span><br><span class="line"><span class="keyword">import</span> sound.effects.surround</span><br><span class="line"><span class="keyword">from</span> sound.effects <span class="keyword">import</span> *</span><br></pre></td></tr></table></figure>
-
-<p>这个例子中，在执行 <code>from...import</code> 前，包 <code>sound.effects</code> 中的 <code>echo</code> 和<code> surround</code> 模块都被导入到当前的命名空间中了。（当然如果定义了 <code>__all__</code> 就更没问题了）</p>
-<p>通常我们并不主张使用<code> *</code> 这种方法来导入模块，因为这种方法经常会导致代码的可读性降低。不过这样倒的确是可以省去不少敲键的功夫，而且一些模块都设计成了只能通过特定的方法导入。</p>
-<p>记住，使用 <code>from Package import specific_submodule</code> 这种方法永远不会有错。事实上，这也是推荐的方法。除非是你要导入的子模块有可能和其他包的子模块重名。</p>
-<p>如果在结构中包是一个子包（比如这个例子中对于包<code>sound</code>来说），而你又想导入兄弟包（同级别的包）你就得使用导入绝对的路径来导入。比如，如果模块<code>sound.filters.vocoder</code> 要使用包 <code>sound.effects</code> 中的模块 <code>echo</code>，你就要写成 <code>from sound.effects import echo</code>。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> . <span class="keyword">import</span> echo</span><br><span class="line"><span class="keyword">from</span> .. <span class="keyword">import</span> formats</span><br><span class="line"><span class="keyword">from</span> ..filters <span class="keyword">import</span> equalizer</span><br></pre></td></tr></table></figure>
-
-<p>无论是隐式的还是显式的相对导入都是从当前模块开始的。主模块的名字永远是<code>__main__</code>，一个Python应用程序的主模块，应当总是使用绝对路径引用。</p>
-<p>包还提供一个额外的属性<code>__path__</code>。这是一个目录列表，里面每一个包含的目录都有为这个包服务的<code>__init__.py</code>，你得在其他<code>__init__.py</code>被执行前定义哦。可以修改这个变量，用来影响包含在包里面的模块和子包。</p>
-<p>这个功能并不常用，一般用来扩展包里面的模块。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/01/30/%E6%A8%A1%E5%9D%97/" data-id="cldidxnjx000220veeewm2qmu" data-title="模块" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF%E5%92%8C%E5%AD%A6%E4%B9%A0%E5%8D%9A%E5%AE%A2/" rel="tag">技术和学习博客</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -1156,6 +1071,10 @@
       <ul>
         
           <li>
+            <a href="/2023/03/07/Java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/">Java基础语法</a>
+          </li>
+        
+          <li>
             <a href="/2023/03/07/java%E7%AE%80%E4%BB%8B/">java简介</a>
           </li>
         
@@ -1169,10 +1088,6 @@
         
           <li>
             <a href="/2023/03/01/%E8%80%83%E7%A0%94%E5%A4%8D%E8%AF%95%E9%97%AE%E9%A2%98/">考研复试问题</a>
-          </li>
-        
-          <li>
-            <a href="/2023/02/13/%E5%AD%97%E5%85%B8/">字典</a>
           </li>
         
       </ul>
