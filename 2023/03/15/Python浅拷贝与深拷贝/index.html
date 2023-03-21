@@ -4,14 +4,19 @@
   <meta charset="utf-8">
   
   
-  <title>Archives: 2023/3 | Hexo</title>
+  <title>Python浅拷贝与深拷贝 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/2023/03/index.html">
+  <meta name="description" content="Python浅拷贝与深拷贝变量: 是一个系统表的元素，拥有指向对象的连接空间 对象: 被分配的一块内存，存储其所代表的值 引用: 是自动形成的从变量到对象的指针 类型: 属于对象，而非变量 不可变对象: 一旦创建就不可修改的对象，包括字符串、元组、数值类型（该对象所指向的内存中的值不能被改变。当改变某个变量时候，由于其所指的值不能被改变。相当于把原来的值复制一份后再改变，这会开辟一个新的地址，变量">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python浅拷贝与深拷贝">
+<meta property="og:url" content="http://example.com/2023/03/15/Python%E6%B5%85%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B7%B1%E6%8B%B7%E8%B4%9D/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Python浅拷贝与深拷贝变量: 是一个系统表的元素，拥有指向对象的连接空间 对象: 被分配的一块内存，存储其所代表的值 引用: 是自动形成的从变量到对象的指针 类型: 属于对象，而非变量 不可变对象: 一旦创建就不可修改的对象，包括字符串、元组、数值类型（该对象所指向的内存中的值不能被改变。当改变某个变量时候，由于其所指的值不能被改变。相当于把原来的值复制一份后再改变，这会开辟一个新的地址，变量">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-03-15T07:07:02.000Z">
+<meta property="article:modified_time" content="2023-03-15T07:37:52.175Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="技术和学习博客">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -69,153 +74,82 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2023" class="archive-year">2023</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2023/03/21/collections%E6%A8%A1%E5%9D%97/" class="archive-article-date">
-  <time class="dt-published" datetime="2023-03-21T08:26:29.000Z" itemprop="datePublished">Mar 21</time>
+        <section id="main"><article id="post-Python浅拷贝与深拷贝" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/03/15/Python%E6%B5%85%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B7%B1%E6%8B%B7%E8%B4%9D/" class="article-date">
+  <time class="dt-published" datetime="2023-03-15T07:07:02.000Z" itemprop="datePublished">2023-03-15</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/PythonNotes/">PythonNotes</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/03/21/collections%E6%A8%A1%E5%9D%97/">collections模块</a>
+    <h1 class="p-name article-title" itemprop="headline name">
+      Python浅拷贝与深拷贝
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2023/03/15/Python%E6%B5%85%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B7%B1%E6%8B%B7%E8%B4%9D/" class="archive-article-date">
-  <time class="dt-published" datetime="2023-03-15T07:07:02.000Z" itemprop="datePublished">Mar 15</time>
-</a>
+    <div class="e-content article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/03/15/Python%E6%B5%85%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B7%B1%E6%8B%B7%E8%B4%9D/">Python浅拷贝与深拷贝</a>
-    </h1>
-  
+        <h1 id="Python浅拷贝与深拷贝"><a href="#Python浅拷贝与深拷贝" class="headerlink" title="Python浅拷贝与深拷贝"></a><code>Python</code>浅拷贝与深拷贝</h1><p>变量: 是一个系统表的元素，拥有指向对象的连接空间</p>
+<p>对象: 被分配的一块内存，存储其所代表的值</p>
+<p>引用: 是自动形成的从变量到对象的指针</p>
+<p>类型: 属于对象，而非变量</p>
+<p>不可变对象: 一旦创建就不可修改的对象，包括字符串、元组、数值类型（该对象所指向的内存中的值不能被改变。当改变某个变量时候，由于其所指的值不能被改变。相当于把原来的值复制一份后再改变，这会开辟一个新的地址，变量再指向这个新的地址。）</p>
+<p>可变对象: 可以修改的对象，包括列表，字典，集合(该对象所指向的内存中的值可以被改变。变量(准确的说是引用)改变后，实际上是其所指的值直接发生改变，并没有发生复制行为，也没有开辟开辟新的地址，通俗点说就是<strong>原地改变</strong>)</p>
+<p>当写</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="string">&#x27;python&#x27;</span></span><br></pre></td></tr></table></figure>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2023/03/07/Java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" class="archive-article-date">
-  <time class="dt-published" datetime="2023-03-07T12:03:43.000Z" itemprop="datePublished">Mar 7</time>
-</a>
+<p>时，<code>Python</code>解释器干的事情:</p>
+<ol>
+<li>创建变量<code>a</code></li>
+<li>创建一个对象(分配一块内存)，来存储值<code>&#39;python&#39;</code></li>
+<li>将变量与对象，通过指针连接起来，从变量到对象的连接称之为引用（变量引用对象）</li>
+</ol>
+
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/03/07/Java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/">Java基础语法</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2023/03/07/java%E7%AE%80%E4%BB%8B/" class="archive-article-date">
-  <time class="dt-published" datetime="2023-03-07T11:19:40.000Z" itemprop="datePublished">Mar 7</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/03/15/Python%E6%B5%85%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B7%B1%E6%8B%B7%E8%B4%9D/" data-id="clfi1n3kk0002i0vee11664ux" data-title="Python浅拷贝与深拷贝" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/03/07/java%E7%AE%80%E4%BB%8B/">java简介</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2023/03/07/%E7%AC%AC%E4%B8%80%E4%B8%AAjava%E7%A8%8B%E5%BA%8F/" class="archive-article-date">
-  <time class="dt-published" datetime="2023-03-07T10:58:59.000Z" itemprop="datePublished">Mar 7</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/03/07/%E7%AC%AC%E4%B8%80%E4%B8%AAjava%E7%A8%8B%E5%BA%8F/">第一个java程序</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2023/03/05/%E6%8E%A8%E5%AF%BC%E5%BC%8F/" class="archive-article-date">
-  <time class="dt-published" datetime="2023-03-05T12:22:58.000Z" itemprop="datePublished">Mar 5</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/03/05/%E6%8E%A8%E5%AF%BC%E5%BC%8F/">推导式</a>
-    </h1>
-  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF%E5%92%8C%E5%AD%A6%E4%B9%A0%E5%8D%9A%E5%AE%A2/" rel="tag">技术和学习博客</a></li></ul>
 
-    </header>
+    </footer>
   </div>
-</article>
   
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2023/03/01/%E8%80%83%E7%A0%94%E5%A4%8D%E8%AF%95%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  <time class="dt-published" datetime="2023-03-01T08:22:58.000Z" itemprop="datePublished">Mar 1</time>
-</a>
-      
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/03/01/%E8%80%83%E7%A0%94%E5%A4%8D%E8%AF%95%E9%97%AE%E9%A2%98/">考研复试问题</a>
-    </h1>
+    <a href="/2023/03/21/collections%E6%A8%A1%E5%9D%97/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          collections模块
+        
+      </div>
+    </a>
   
+  
+    <a href="/2023/03/07/Java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Java基础语法</div>
+    </a>
+  
+</nav>
 
-    </header>
-  </div>
+  
 </article>
-  
-  
-    </div></section>
-  
 
 
 </section>

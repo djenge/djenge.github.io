@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>collections模块 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="collections.defaultdictDefaultdict is a container like dictionaries present in the module collections. Defaultdict is a sub-class of the dictionary class that returns a dictionary-like object. The fun">
+<meta property="og:type" content="article">
+<meta property="og:title" content="collections模块">
+<meta property="og:url" content="http://example.com/2023/03/21/collections%E6%A8%A1%E5%9D%97/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="collections.defaultdictDefaultdict is a container like dictionaries present in the module collections. Defaultdict is a sub-class of the dictionary class that returns a dictionary-like object. The fun">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-03-21T08:26:29.000Z">
+<meta property="article:modified_time" content="2023-03-21T09:18:22.173Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="技术和学习博客">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-collections模块" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/03/21/collections%E6%A8%A1%E5%9D%97/" class="article-date">
+  <time class="dt-published" datetime="2023-03-21T08:26:29.000Z" itemprop="datePublished">2023-03-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/PythonNotes/">PythonNotes</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      collections模块
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="collections-defaultdict"><a href="#collections-defaultdict" class="headerlink" title="collections.defaultdict"></a><code>collections.defaultdict</code></h1><p><code>Defaultdict</code> is a container like dictionaries present in the module <strong>collections</strong>. <code>Defaultdict</code> is a sub-class of the dictionary class that returns a dictionary-like object. The functionality of both dictionaries and <code>defaultdict</code> are almost same except for the fact that <code>defaultdict</code> never raises a <code>KeyError</code>. It provides a default value for the key that does not exists.</p>
+<p><code>Python</code>中通过<code>Key</code>访问字典，当<code>Key</code>不存在时，会引发<code>‘KeyError’</code>异常。为了避免这种情况的发生，可以使用<code>collections</code>类中的<code>defaultdict()</code>方法来为字典提供默认值</p>
+<p><code>defaultdict</code>是内置数据类型<code>dict</code>的一个子类，基本功能与<code>dict</code>一样，只是重写了一个方法<code>missing(key)</code>和增加了一个可写的对象变量<code>default_factory</code></p>
+<p>如果<code>default_factory</code>属性为<code>None</code>，就报出以<code>key</code>作为遍历的<code>KeyError</code>异常；<br>如果<code>default_factory</code>不为<code>None</code>，就会向给定的<code>key</code>提供一个默认值，这个值插入到词典中，并返回；<br>如果调用<code>default_factory</code>报出异常，这个异常在传播时不会改变；<br>这个方法是当要求的<code>key</code>不存在时，<code>dict</code>类中的<code>getitem()</code>方法所调用，无论它返回或者报出什么，最终返回或报出给<code>getitem()</code>；<br>只有<code>getitem()</code>才能调用<code>missing()</code>，这意味着，如果<code>get()</code>起作用，如普通的词典，将会返回<code>None</code>作为默认值，而不是使用<code>default_factory</code>；<br><code>default_factory</code>， 这个属性用于<code>missing()</code>方法，使用构造器中的第一个参数初始化；</p>
+<p>使用<code>list</code>作为<code>default_factory</code>，很容易将一个<code>key-value</code>的序列转换为<code>list</code>字典；</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Python program to demonstrate</span></span><br><span class="line"><span class="comment"># defaultdict</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> defaultdict</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Function to return a default</span></span><br><span class="line"><span class="comment"># values for keys that is not</span></span><br><span class="line"><span class="comment"># present</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">def_value</span>():</span><br><span class="line">	<span class="keyword">return</span> <span class="string">&quot;Not Present&quot;</span></span><br><span class="line">	</span><br><span class="line"><span class="comment"># Defining the dict</span></span><br><span class="line">d = defaultdict(def_value)</span><br><span class="line">d[<span class="string">&quot;a&quot;</span>] = <span class="number">1</span></span><br><span class="line">d[<span class="string">&quot;b&quot;</span>] = <span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(d[<span class="string">&quot;a&quot;</span>])</span><br><span class="line"><span class="built_in">print</span>(d[<span class="string">&quot;b&quot;</span>])</span><br><span class="line"><span class="built_in">print</span>(d[<span class="string">&quot;c&quot;</span>])</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><code>Output</code>:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line">Not Present </span><br></pre></td></tr></table></figure>
+
+<h2 id="列表字典"><a href="#列表字典" class="headerlink" title="列表字典"></a>列表字典</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> defaultdict</span><br><span class="line"></span><br><span class="line">s = [(<span class="string">&#x27;yellow&#x27;</span>, <span class="number">1</span>), (<span class="string">&#x27;blue&#x27;</span>, <span class="number">2</span>), (<span class="string">&#x27;yellow&#x27;</span>, <span class="number">3</span>), (<span class="string">&#x27;blue&#x27;</span>, <span class="number">4</span>), (<span class="string">&#x27;red&#x27;</span>, <span class="number">1</span>)]</span><br><span class="line">d = defaultdict(<span class="built_in">list</span>)</span><br><span class="line"><span class="keyword">for</span> k, v <span class="keyword">in</span> s:</span><br><span class="line">    d[k].append(v)</span><br><span class="line">a = d.items()</span><br><span class="line"><span class="built_in">print</span>(a)</span><br><span class="line">b = <span class="built_in">sorted</span>(d.items())</span><br><span class="line"><span class="built_in">print</span>(b)</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">结果：</span></span><br><span class="line"><span class="string">dict_items([(&#x27;yellow&#x27;, [1, 3]), (&#x27;blue&#x27;, [2, 4]), (&#x27;red&#x27;, [1])])</span></span><br><span class="line"><span class="string">[(&#x27;blue&#x27;, [2, 4]), (&#x27;red&#x27;, [1]), (&#x27;yellow&#x27;, [1, 3])]</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>当字典中没有的键第一次出现时，<code>default_factory</code>自动为其返回一个空列表，<code>list.append()</code>会将值添加进新列表；再次遇到相同的键时，<code>list.append()</code>将其它值再添加进该列表。<br>这种方法比使用<code>dict.setdefault(</code>)更为便捷，<code>dict.setdefault()</code>也可以实现相同的功能</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/03/21/collections%E6%A8%A1%E5%9D%97/" data-id="clfi1n3ke0000i0vedla945cp" data-title="collections模块" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF%E5%92%8C%E5%AD%A6%E4%B9%A0%E5%8D%9A%E5%AE%A2/" rel="tag">技术和学习博客</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2023/03/15/Python%E6%B5%85%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B7%B1%E6%8B%B7%E8%B4%9D/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Python浅拷贝与深拷贝</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java%E5%9F%BA%E7%A1%80/">Java基础</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/PythonNotes/">PythonNotes</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AE%97%E6%B3%95%E9%A2%98/">算法题</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%80%83%E7%A0%94/">考研</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF%E5%92%8C%E5%AD%A6%E4%B9%A0%E5%8D%9A%E5%AE%A2/" rel="tag">技术和学习博客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%80%83%E7%A0%94/" rel="tag">考研</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/%E6%8A%80%E6%9C%AF%E5%92%8C%E5%AD%A6%E4%B9%A0%E5%8D%9A%E5%AE%A2/" style="font-size: 20px;">技术和学习博客</a> <a href="/tags/%E8%80%83%E7%A0%94/" style="font-size: 10px;">考研</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/03/21/collections%E6%A8%A1%E5%9D%97/">collections模块</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/15/Python%E6%B5%85%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B7%B1%E6%8B%B7%E8%B4%9D/">Python浅拷贝与深拷贝</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/07/Java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/">Java基础语法</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/07/java%E7%AE%80%E4%BB%8B/">java简介</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/07/%E7%AC%AC%E4%B8%80%E4%B8%AAjava%E7%A8%8B%E5%BA%8F/">第一个java程序</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
